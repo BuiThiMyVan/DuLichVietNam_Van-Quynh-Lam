@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;
@@ -6,32 +6,28 @@ namespace Web_DuLichVietNam.Framework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LOAIPHONG")]
-    public partial class LOAIPHONG
+    [Table("HUONGDANVIEN")]
+    public partial class HUONGDANVIEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIPHONG()
+        public HUONGDANVIEN()
         {
-            DATTOURs = new HashSet<DATTOUR>();
+            TOURs = new HashSet<TOUR>();
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaLP { get; set; }
+        public int MaHDV { get; set; }
 
         [StringLength(50)]
-        public string TenLoai { get; set; }
+        public string TenHDV { get; set; }
 
-        public double? GiaPhongDon { get; set; }
-
-        public double? GiaPhongDoi { get; set; }
+        [StringLength(10)]
+        public string SDT { get; set; }
 
         [StringLength(50)]
-        public string MaKS { get; set; }
+        public string DiaChi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATTOUR> DATTOURs { get; set; }
-
-        public virtual KHACHSAN KHACHSAN { get; set; }
+        public virtual ICollection<TOUR> TOURs { get; set; }
     }
 }

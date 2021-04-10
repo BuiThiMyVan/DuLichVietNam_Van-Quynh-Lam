@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;
@@ -6,28 +6,30 @@ namespace Web_DuLichVietNam.Framework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("KHACHSAN")]
-    public partial class KHACHSAN
+    [Table("LOAIPHONG")]
+    public partial class LOAIPHONG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHSAN()
+        public LOAIPHONG()
         {
-            LOAIPHONGs = new HashSet<LOAIPHONG>();
+            DATTOURs = new HashSet<DATTOUR>();
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaKS { get; set; }
+        public int MaLP { get; set; }
 
         [StringLength(50)]
-        public string TenKS { get; set; }
+        public string TenLoai { get; set; }
 
-        [StringLength(50)]
-        public string DiaChi { get; set; }
+        public double? GiaPhongDon { get; set; }
 
-        public int? SoPhong { get; set; }
+        public double? GiaPhongDoi { get; set; }
+
+        public int? MaKS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOAIPHONG> LOAIPHONGs { get; set; }
+        public virtual ICollection<DATTOUR> DATTOURs { get; set; }
+
+        public virtual KHACHSAN KHACHSAN { get; set; }
     }
 }

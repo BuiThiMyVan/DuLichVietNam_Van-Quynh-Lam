@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;

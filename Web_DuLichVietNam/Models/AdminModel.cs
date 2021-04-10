@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using Web_DuLichVietNam.Framework;
+using Web_DuLichVietNam.EF;
 
 namespace Web_DuLichVietNam.Models
 {
     public class AdminModel
     {
-        private DuLichVNDbContext context = null;
+        private DuLichVietNamDbContext context = null;
         
         public AdminModel()
         {
-            context = new DuLichVNDbContext();
+            context = new DuLichVietNamDbContext();
         }
 
         public bool Login(string tendangnhap, string matkhau)

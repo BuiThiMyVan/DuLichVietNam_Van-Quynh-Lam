@@ -1,14 +1,14 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DuLichVNDbContext : DbContext
+    public partial class DuLichVietNamDbContext : DbContext
     {
-        public DuLichVNDbContext()
-            : base("name=DuLichVNDbContext")
+        public DuLichVietNamDbContext()
+            : base("name=DuLichVietNamDbContext")
         {
         }
 
@@ -20,7 +20,6 @@ namespace Web_DuLichVietNam.Framework
         public virtual DbSet<LOAIPHONG> LOAIPHONGs { get; set; }
         public virtual DbSet<PHUONGTIEN> PHUONGTIENs { get; set; }
         public virtual DbSet<QUYEN> QUYENs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TINHTHANH> TINHTHANHs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
 
@@ -30,32 +29,8 @@ namespace Web_DuLichVietNam.Framework
                 .Property(e => e.MK)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<DATTOUR>()
-                .Property(e => e.MaTour)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DATTOUR>()
-                .Property(e => e.MaKH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DATTOUR>()
-                .Property(e => e.MaLP)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DATTOUR>()
-                .Property(e => e.MaHDV)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HUONGDANVIEN>()
-                .Property(e => e.MaHDV)
-                .IsUnicode(false);
-
             modelBuilder.Entity<HUONGDANVIEN>()
                 .Property(e => e.SDT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KHACHHANG>()
-                .Property(e => e.MaKH)
                 .IsUnicode(false);
 
             modelBuilder.Entity<KHACHHANG>()
@@ -79,40 +54,8 @@ namespace Web_DuLichVietNam.Framework
                 .WithRequired(e => e.KHACHHANG)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<KHACHSAN>()
-                .Property(e => e.MaKS)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOAIPHONG>()
-                .Property(e => e.MaLP)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LOAIPHONG>()
-                .Property(e => e.MaKS)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHUONGTIEN>()
-                .Property(e => e.MaPT)
-                .IsUnicode(false);
-
             modelBuilder.Entity<PHUONGTIEN>()
                 .Property(e => e.BienKS)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TINHTHANH>()
-                .Property(e => e.MaTT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TOUR>()
-                .Property(e => e.MaTour)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TOUR>()
-                .Property(e => e.MaTT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TOUR>()
-                .Property(e => e.MaPT)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TOUR>()

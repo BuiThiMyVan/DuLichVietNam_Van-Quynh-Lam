@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;
@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaTour { get; set; }
+        public int MaTour { get; set; }
 
         [StringLength(100)]
         public string TenTour { get; set; }
@@ -43,14 +42,16 @@ namespace Web_DuLichVietNam.Framework
         [StringLength(50)]
         public string NoiXuatPhat { get; set; }
 
-        [StringLength(50)]
-        public string MaTT { get; set; }
+        public int? MaTT { get; set; }
 
-        [StringLength(50)]
-        public string MaPT { get; set; }
+        public int? MaPT { get; set; }
+
+        public int? MaHDV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATTOUR> DATTOURs { get; set; }
+
+        public virtual HUONGDANVIEN HUONGDANVIEN { get; set; }
 
         public virtual PHUONGTIEN PHUONGTIEN { get; set; }
 

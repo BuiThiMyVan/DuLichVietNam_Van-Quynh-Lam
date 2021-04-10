@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;
@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaTT { get; set; }
+        public int MaTT { get; set; }
 
         [StringLength(50)]
         public string TenTT { get; set; }

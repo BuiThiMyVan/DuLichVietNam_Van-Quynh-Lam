@@ -1,4 +1,4 @@
-namespace Web_DuLichVietNam.Framework
+namespace Web_DuLichVietNam.EF
 {
     using System;
     using System.Collections.Generic;
@@ -11,13 +11,13 @@ namespace Web_DuLichVietNam.Framework
     {
         [Key]
         [Column(Order = 0)]
-        [StringLength(50)]
-        public string MaTour { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MaTour { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(50)]
-        public string MaKH { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MaKH { get; set; }
 
         public int? SoLuongNL { get; set; }
 
@@ -26,16 +26,14 @@ namespace Web_DuLichVietNam.Framework
         [Column(TypeName = "date")]
         public DateTime? NgayDat { get; set; }
 
-        [StringLength(50)]
-        public string MaLP { get; set; }
+        public int? MaLP { get; set; }
+
+        public int? SoPhongDon { get; set; }
+
+        public int? SoPhongDoi { get; set; }
 
         [StringLength(100)]
         public string YeuCau { get; set; }
-
-        [StringLength(50)]
-        public string MaHDV { get; set; }
-
-        public virtual HUONGDANVIEN HUONGDANVIEN { get; set; }
 
         public virtual KHACHHANG KHACHHANG { get; set; }
 
