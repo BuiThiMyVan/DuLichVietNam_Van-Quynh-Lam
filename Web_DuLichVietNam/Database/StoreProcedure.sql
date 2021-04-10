@@ -1,6 +1,7 @@
 USE DULICHVIETNAM
 GO
 
+-- Thu tuc kiem tra tai khoan admin
 CREATE PROC KIEMTRAADMIN
 	@tendangnhap VARCHAR(50),
 	@matkhau VARCHAR(50)
@@ -19,3 +20,4 @@ BEGIN
 		set @res = 0
 	select @res
 END
+GO

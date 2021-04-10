@@ -7,3 +7,4 @@ INSERT INTO ADMIN VALUES('admin1','123',N'Nguyễn Thanh Hoa',1)
 INSERT INTO ADMIN VALUES('admin2','456',N'Nguyễn Trọng Đức',1)
 
 
+
