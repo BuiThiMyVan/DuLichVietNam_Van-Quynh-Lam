@@ -26,6 +26,7 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         }
 
         // GET: Admin/DatTour/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -33,34 +34,36 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
 
         // POST: Admin/DatTour/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(DATTOUR dattour)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                var dao = new DatTourModel();
+                dao.Insert(dattour);
                 return RedirectToAction("Index");
-            }
-            catch
+            } catch
             {
                 return View();
             }
         }
 
         // GET: Admin/DatTour/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int matour, int makh)
         {
-            return View();
+            matour = Int32.Parse(Request.Params["matour"]);
+            makh = Int32.Parse(Request.Params["makh"]);
+            var dattour = new DatTourModel().GetDatTourByMa(matour,makh);
+            return View(dattour);
         }
 
         // POST: Admin/DatTour/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(DATTOUR dattour)
         {
             try
             {
-                // TODO: Add update logic here
-
+                var dao = new DatTourModel();
+                dao.Update(dattour);
                 return RedirectToAction("Index");
             }
             catch

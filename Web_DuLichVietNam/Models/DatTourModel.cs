@@ -20,23 +20,28 @@ namespace Web_DuLichVietNam.Models
             return db.DATTOURs.OrderByDescending(x => x.NgayDat).ToPagedList(page, pageSize);
         }
         
-        public bool Update(DATTOUR entity)
+        public void Insert(DATTOUR entity)
         {
-            try
-            {
-                var dattour = db.DATTOURs.Find(entity.MaKH);
-                dattour.SoLuongNL = entity.SoLuongNL;
-                dattour.SoLuongTE = entity.SoLuongTE;
-                dattour.SoPhongDoi = entity.SoPhongDoi;
-                dattour.SoPhongDon = entity.SoPhongDon;
-                dattour.MaLP = entity.MaLP;
-                db.SaveChanges();
-                return true;
-            } catch(Exception ex)
-            {
-                return false;
-            }
+            entity.NgayDat = DateTime.Now;
+            db.DATTOURs.Add(entity);
+            db.SaveChanges();
             
+        }
+
+        public void Update(DATTOUR entity)
+        {
+            var dattour = db.DATTOURs.Find(entity.MaTour,entity.MaKH);
+            dattour.SoLuongNL = entity.SoLuongNL;
+            dattour.SoLuongTE = entity.SoLuongTE;
+            dattour.SoPhongDoi = entity.SoPhongDoi;
+            dattour.SoPhongDon = entity.SoPhongDon;
+            dattour.MaLP = entity.MaLP;
+            db.SaveChanges();
+        }
+
+        public DATTOUR GetDatTourByMa(int matour, int makh)
+        {
+            return db.DATTOURs.Find(matour,makh);
         }
     }
 }

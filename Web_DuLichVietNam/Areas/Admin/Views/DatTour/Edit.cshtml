@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Web_DuLichVietNam.EF
+@model DATTOUR
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Đặt Tour</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Đặt Tour</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-4 mt-3">
+                            <label>Mã Tour</label>
+                            <input type="number" name="MaTour" value=@Model.MaTour>
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <label>Mã Khách Hàng</label>
+                            <input type="number" name="MaKH" value=@Model.MaKH>
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <div class="row">
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Số Lượng</label>
+                                </div>
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Trẻ Em</label>
+                                    <input type="number" name="SoLuongTE" value=@Model.SoLuongTE>
+                                </div>
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Người Lớn</label>
+                                    <input type="number" name="SoLuongNL" id="w3lName" value=@Model.SoLuongNL>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-input col-md-4  mt-3">
+                            <label>Loại Phòng</label>
+                            <input type="number" name="MaLP" id="w3lName" value=@Model.MaLP>
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <div class="row">
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Số Phòng</label>
+                                </div>
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Đơn</label>
+                                    <input type="number" name="SoPhongDon" id="w3lName" value=@Model.SoPhongDon>
+                                </div>
+                                <div class="form-input col-md-4 form-inline">
+                                    <label>Đôi</label>
+                                    <input type="number" name="SoPhongDoi" id="w3lName" value=@Model.SoPhongDoi>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <label>Yêu Cầu Khác</label>
+                            <input type="text" name="" placeholder="Yêu Cầu Khác" required="" value=@Model.YeuCau>
+                        </div>
+                        <div class="bottom-btn col-md-4 mt-5">
+                            <button class="btn btn-style btn-primary w-100" type="submit">SỬA</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+
