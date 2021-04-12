@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaHDV { get; set; }
+        public int MaHDV { get; set; }
 
         [StringLength(50)]
         public string TenHDV { get; set; }

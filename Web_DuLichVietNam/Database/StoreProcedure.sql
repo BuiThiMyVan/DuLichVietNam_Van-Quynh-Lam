@@ -19,3 +19,13 @@ BEGIN
 		set @res = 0
 	select @res
 END
+--------------------------quynh---------------------------
+
+CREATE PROCEDURE KhachSan_GetAll
+AS
+BEGIN
+  SELECT *
+  FROM KHACHSAN
+END
+GO
+

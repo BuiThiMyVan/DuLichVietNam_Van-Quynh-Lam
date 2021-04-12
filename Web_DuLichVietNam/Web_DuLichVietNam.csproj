@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachSanController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -157,13 +158,13 @@
     <Compile Include="Framework\LOAIPHONG.cs" />
     <Compile Include="Framework\PHUONGTIEN.cs" />
     <Compile Include="Framework\QUYEN.cs" />
-    <Compile Include="Framework\sysdiagram.cs" />
     <Compile Include="Framework\TINHTHANH.cs" />
     <Compile Include="Framework\TOUR.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\KhachSanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +251,10 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachSan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachSan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachSan\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachSan\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

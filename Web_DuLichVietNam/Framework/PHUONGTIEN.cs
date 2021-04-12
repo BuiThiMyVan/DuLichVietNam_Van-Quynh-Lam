@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaPT { get; set; }
+        public int MaPT { get; set; }
 
         [StringLength(50)]
         public string TenPT { get; set; }
