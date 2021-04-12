@@ -250,8 +250,16 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Database\Data.sql" />
     <Content Include="Database\Database.sql" />
-    <Content Include="Database\Images\anh1.png" />
-    <Content Include="Database\Images\anh3.PNG" />
+    <Content Include="Database\Images\g1.jpg" />
+    <Content Include="Database\Images\g10.jpg" />
+    <Content Include="Database\Images\g2.jpg" />
+    <Content Include="Database\Images\g3.jpg" />
+    <Content Include="Database\Images\g4.jpg" />
+    <Content Include="Database\Images\g5.jpg" />
+    <Content Include="Database\Images\g6.jpg" />
+    <Content Include="Database\Images\g7.jpg" />
+    <Content Include="Database\Images\g8.jpg" />
+    <Content Include="Database\Images\g9.jpg" />
     <Content Include="Database\StoreProcedure.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -302,7 +310,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\HuongDanVien\" />
     <Folder Include="Areas\Admin\Views\KhachHang\" />
-    <Folder Include="Database\Images\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

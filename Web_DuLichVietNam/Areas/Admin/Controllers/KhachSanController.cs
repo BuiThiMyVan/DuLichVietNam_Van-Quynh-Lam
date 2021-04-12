@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web_DuLichVietNam.Models;
-using Web_DuLichVietNam.Framework;
+using Web_DuLichVietNam.EF;
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
     public class KhachSanController : Controller
     {
         // GET: Admin/KhachSan
-        private DuLichVNDbContext con = new DuLichVNDbContext();
+        private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
         public ActionResult Index()
         {
             var model = con.KHACHSANs.ToList();

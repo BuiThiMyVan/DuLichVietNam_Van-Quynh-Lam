@@ -45,8 +45,8 @@ INSERT INTO KHACHHANG VALUES(N'Đào Thanh Bình','1995-11-26',0,045968963,'than
 INSERT INTO KHACHHANG VALUES(N'Đặng Thị Hiền','1998-07-06',0,045678996,'hiendang0607@gmail.com','hiendang0607','hiendang0607',2)
 INSERT INTO KHACHHANG VALUES(N'Nguyễn Hồng Trung','1994-07-19',0,045678963,'hongtrung1907@gmail.com','hongtrung1907','hongtrung1907',2)
 
-INSERT INTO TOUR VALUES(N'Hà Nội-Yên Tử-Hạ Long-Tràng An-Sapa-Fansipan từ Sài Gòn',8399000,30,'2021-04-10',6,'','','',N'TP. HCM',2,1,1)
-INSERT INTO TOUR VALUES(N'Hà Nội - Hà Giang - Cao Bằng - Thác Bản Giốc - Hồ Ba Bể từ Hà Nội',8399000,30,'2021-04-20',6,'','','',N'TP. HCM',1,1,2)
+INSERT INTO TOUR VALUES(N'Hà Nội-Yên Tử-Hạ Long-Tràng An-Sapa-Fansipan từ Sài Gòn',8399000,30,'2021-04-10',6,'','g1.jpg','',N'TP. HCM',2,1,1)
+INSERT INTO TOUR VALUES(N'Hà Nội - Hà Giang - Cao Bằng - Thác Bản Giốc - Hồ Ba Bể từ Hà Nội',8399000,30,'2021-04-20',6,'','g2.jpg','',N'TP. HCM',1,1,2)
 
 INSERT INTO DATTOUR VALUES(2,1,4,2,'2021-10-04',1,0,2,'')
 INSERT INTO DATTOUR VALUES(2,2,4,2,'2021-10-04',1,0,2,'')

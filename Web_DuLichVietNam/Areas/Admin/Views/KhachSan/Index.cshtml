@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@using Web_DuLichVietNam.Framework;
+@using Web_DuLichVietNam.EF;
 @model List<KHACHSAN>
 <main>
     <div class="container-fluid">
@@ -38,7 +38,7 @@
                                 <td>@ks.TenKS</td>
                                 <td>@ks.DiaChi</td>
                                 <td>@ks.SoPhong</td>
-                                <td class="text-center">''
+                                <td class="text-center">
                                     <a class="btn btn-danger" href="/Admin/KhachSan/Delete/@ks.MaKS">Xóa</a>
                                     <a class="btn btn-info" href="/Admin/KhachSan/Edit/@ks.MaKS">Cập Nhật</a>
                                 </td>
