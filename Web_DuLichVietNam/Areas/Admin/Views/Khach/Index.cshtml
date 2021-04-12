@@ -1,0 +1,89 @@
+﻿@model List<Web_DuLichVietNam.Framework.KHACHHANG>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Tables</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div>
+                    <a href="/Admin/Khach/Create">INSERT CUSTOMER</a>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                DataTable Example
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Mã KH</th>
+                                <th>Tên KH</th>
+                                <th>Ngày sinh</th>
+                                <th>Giới tính</th>
+                                <th>SĐT</th>
+                                <th>Email</th>
+                                <th>Tên DN</th>
+                                <th>MK</th>
+                                <th>Quyền</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Mã KH</th>
+                                <th>Tên KH</th>
+                                <th>Ngày sinh</th>
+                                <th>Giới tính</th>
+                                <th>SĐT</th>
+                                <th>Email</th>
+                                <th>Tên DN</th>
+                                <th>MK</th>
+                                <th>Quyền</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr id="row_@item.MaKH">
+
+                                    <td>@item.MaKH</td>
+                                    <td>@item.TenKH</td>
+                                    <td>@(item.NgaySinh.HasValue?item.NgaySinh.Value.ToString("dd/MM/yyyy") : "")</td>
+                                    <td>@item.GioiTinh</td>
+                                    <td>@item.SDT</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.TenDN</td>
+                                    <td>@item.MK</td>
+                                    <td>@item.MaQuyen</td>
+                                    <td>
+                                        <a href="/Admin/Khach/Edit/@item.MaKH">Sửa</a>
+                                        |
+                                        <a href="/Admin/Khach/Delete/@item.MaKH">Xóa</a>                                     
+                                        |
+                                        
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

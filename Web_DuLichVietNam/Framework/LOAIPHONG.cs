@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaLP { get; set; }
+        public int MaLP { get; set; }
 
         [StringLength(50)]
         public string TenLoai { get; set; }
@@ -26,8 +25,7 @@ namespace Web_DuLichVietNam.Framework
 
         public double? GiaPhongDoi { get; set; }
 
-        [StringLength(50)]
-        public string MaKS { get; set; }
+        public int? MaKS { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATTOUR> DATTOURs { get; set; }

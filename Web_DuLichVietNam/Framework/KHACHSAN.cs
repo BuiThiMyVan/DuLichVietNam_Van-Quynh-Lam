@@ -16,8 +16,7 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaKS { get; set; }
+        public int MaKS { get; set; }
 
         [StringLength(50)]
         public string TenKS { get; set; }

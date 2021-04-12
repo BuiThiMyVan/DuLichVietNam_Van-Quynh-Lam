@@ -1,7 +1,8 @@
-namespace Web_DuLichVietNam.Framework
+﻿namespace Web_DuLichVietNam.Framework
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -16,29 +17,34 @@ namespace Web_DuLichVietNam.Framework
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaKH { get; set; }
+        public int MaKH { get; set; }
 
         [StringLength(50)]
+        [DisplayName("Tên khách hàng")]
         public string TenKH { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayName("Ngày sinh")]
         public DateTime? NgaySinh { get; set; }
 
+        [DisplayName("Giới tính")]
         public int? GioiTinh { get; set; }
 
         [StringLength(10)]
+        [DisplayName("Số điện thoại")]
         public string SDT { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }
 
         [StringLength(50)]
+        [DisplayName("Tên đăng nhập")]
         public string TenDN { get; set; }
 
         [StringLength(50)]
         public string MK { get; set; }
 
+        [DisplayName("Quyền")]
         public int? MaQuyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
