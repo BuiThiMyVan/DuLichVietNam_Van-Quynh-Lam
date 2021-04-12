@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Web_DuLichVietNam.Framework;
+@model List<KHACHSAN>
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Khách Sạn</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Khách Sạn</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Danh Sách Các Khách Sạn
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <button onclick="location.href='@Url.Action("Create","KhachSan")'" class="btn btn-info mb-3">Thêm Khách Sạn</button>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mã Khách Sạn</th>
+                                <th scope="col">Tên Khách Sạn</th>
+                                <th scope="col">Địa Chỉ</th>
+                                <th scope="col">Số Phòng</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (KHACHSAN ks in Model)
+                            {
+                            <tr>
+                                <th scope="row">@ks.MaKS</th>
+                                <td>@ks.TenKS</td>
+                                <td>@ks.DiaChi</td>
+                                <td>@ks.SoPhong</td>
+                                <td class="text-center">''
+                                    <a class="btn btn-danger" href="/Admin/KhachSan/Delete/@ks.MaKS">Xóa</a>
+                                    <a class="btn btn-info" href="/Admin/KhachSan/Edit/@ks.MaKS">Cập Nhật</a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

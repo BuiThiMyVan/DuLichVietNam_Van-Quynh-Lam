@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using Web_DuLichVietNam.Framework
+@model TOUR
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Tour</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Tour</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Mã tour</label>
+                            <input type="number" name="MaTour" value=@Model.MaTour>
+                        </div>
+
+
+                        <div class="form-input col-md-10 mt-3">
+                            <label>Tên tour</label>
+                            <input type="text" name="TenTour" value=@Model.TenTour>
+                        </div>
+
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Giá</label>
+                            <input type="number" name="GiaTour" value=@Model.GiaTour>
+                        </div>
+                        <div class="form-input col-md-2 mt-3">
+                            <label>số lượng</label>
+                            <input type="number" name="SoLuong" value=@Model.SoLuong>
+                        </div>
+                        <div class="form-input col-md-8 mt-3">
+                            <label>Hình ảnh</label>
+                            <input type="text" name="HinhAnh" value=@Model.HinhAnh>
+                        </div>
+
+
+                        <div class="bottom-btn col-md-2 mt-3">
+                            <button class="btn btn-style btn-primary w-100" type="submit">SỬA</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
