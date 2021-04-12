@@ -3,6 +3,8 @@
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
+
 @using Web_DuLichVietNam.Framework
 @model KHACHSAN
 <main>
@@ -13,41 +15,36 @@
             <li class="breadcrumb-item active">Quản Lý Khách Sạn</li>
         </ol>
         <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table mr-1"></i>
-                Danh Sách Đặt Tour
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <form method="post" class="booking-form">
-                        <div class="row book-form">
-                            <div class="form-input col-md-4 mt-3">
-                                <label>Mã khách sạn</label>
-                                <input type="number" name="MaKS" value=@Model.MaKS>
-                            </div>
-                            <div class="form-input col-md-4 mt-3">
-                                <label>Tên khách sạn</label>
-                                <input type="text" name="TenKS" value=@Model.TenKS>
-                            </div>
-                            <div class="form-input col-md-4 mt-3">
-                                <label>Địa chỉ</label>
-                                <input type="text" name="DiaChi" value=@Model.DiaChi>
-                            </div>
-                            <div class="form-input col-md-4  mt-3">
-                                <label>Số Phòng</label>
-                                <input type="number" name="SoPhong" value=@Model.SoPhong>
-                            </div>
-
-                            <div class="bottom-btn col-md-4 mt-3">
-                                <button class="btn btn-style btn-primary w-100">SỬA</button>
-                            </div>
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Mã khách sạn</label>
+                            <input type="number" name="MaKS" value=@Model.MaKS>
                         </div>
-                    </form>
-                </div>
+
+
+                        <div class="form-input col-md-9 mt-3">
+                            <label>Tên khách sạn</label>
+                            <input type="text" name="TenKS" value=@Model.TenKS>
+                        </div>
+
+                        <div class="form-input col-md-9 mt-3">
+                            <label>Địa chỉ</label>
+                            <input type="text" name="DiaChi" value=@Model.DiaChi>
+                        </div>
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Số Phòng</label>
+                            <input type="number" name="SoPhong" value=@Model.SoPhong>
+                        </div>
+
+
+                        <div class="bottom-btn col-md-4 mt-3">
+                            <button class="btn btn-style btn-primary w-100" type="submit">Xóa</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </main>
-
-
-

@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <button onclick="" class="btn btn-info mb-3">Thêm Khách Sạn</button>
+                    <button onclick="location.href='@Url.Action("Create","KhachSan")'" class="btn btn-info mb-3">Thêm Khách Sạn</button>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -39,7 +39,7 @@
                                 <td>@ks.DiaChi</td>
                                 <td>@ks.SoPhong</td>
                                 <td class="text-center">''
-                                    <a class="btn btn-danger" href="/Admin/KhachSan/Edit/@ks.MaKS">Xóa</a>
+                                    <a class="btn btn-danger" href="/Admin/KhachSan/Delete/@ks.MaKS">Xóa</a>
                                     <a class="btn btn-info" href="/Admin/KhachSan/Edit/@ks.MaKS">Cập Nhật</a>
                                 </td>
                             </tr>

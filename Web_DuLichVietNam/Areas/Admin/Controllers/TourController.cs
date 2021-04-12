@@ -5,95 +5,97 @@ using System.Web;
 using System.Web.Mvc;
 using Web_DuLichVietNam.Models;
 using Web_DuLichVietNam.Framework;
+
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class KhachSanController : Controller
+    public class TourController : Controller
     {
-        // GET: Admin/KhachSan
+        // GET: Admin/Tour
         private DuLichVNDbContext con = new DuLichVNDbContext();
         public ActionResult Index()
         {
-            var model = con.KHACHSANs.ToList();
+            var model = con.TOURs.ToList();
             return View(model);
         }
 
-        // GET: Admin/KhachSan/Details/5
+        // GET: Admin/Tour/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Admin/KhachSan/Create
+        // GET: Admin/Tour/Create
         public ActionResult Create()
         {
             return View();
         }
+
+        // POST: Admin/Tour/Create
+        [HttpPost]
+        public ActionResult Create(TOUR model)
+        {
+            try
+            {
+                con.TOURs.Add(model);
+                con.SaveChanges();
+                return RedirectToAction("Index");
+
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Admin/Tour/Edit/5
         public ActionResult Edit(int id)
         {
-            var model = con.KHACHSANs.Find(id);
+            var model = con.TOURs.Find(id);
             return View(model);
         }
+
+        // POST: Admin/Tour/Edit/5
+        [HttpPost]
+        public ActionResult Edit(TOUR tr)
+        {
+            try
+            {
+                var model = con.TOURs.Find(tr.MaTour);
+                //sua du lieu
+                model.TenTour = tr.TenTour;
+                model.GiaTour = tr.GiaTour;
+                model.SoLuong = tr.SoLuong;
+                model.HinhAnh = tr.HinhAnh;
+
+
+                con.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Admin/Tour/Delete/5
         public ActionResult Delete(int id)
         {
-            var model = con.KHACHSANs.Find(id);
+            var model = con.TOURs.Find(id);
             return View(model);
         }
-        // POST: Admin/KhachSan/Create
+
+        // POST: Admin/Tour/Delete/5
         [HttpPost]
-        public ActionResult Create(KHACHSAN model)
+        public ActionResult Delete(TOUR tr)
         {
             try
             {
-                con.KHACHSANs.Add(model);
-                con.SaveChanges();
-                return RedirectToAction("Index");
-
-
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Admin/KhachSan/Edit/5
-        
-
-        // POST: Admin/KhachSan/Edit/5
-        [HttpPost]
-        public ActionResult Edit(KHACHSAN ks)
-        {
-            try
-            {
-                var model = con.KHACHSANs.Find(ks.MaKS);
+                var model = con.TOURs.Find(tr.MaTour);
                 //sua du lieu
-                model.TenKS = ks.TenKS;
-                model.DiaChi = ks.DiaChi;
-                model.SoPhong = ks.SoPhong;
+                con.TOURs.Remove(model);
 
-                con.SaveChanges();
-                return RedirectToAction("Index");
-
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Admin/KhachSan/Delete/5
-        
-
-        // POST: Admin/KhachSan/Delete/5
-        [HttpPost]
-        public ActionResult Delete(KHACHSAN ks)
-        {
-            try
-            {
-                var model = con.KHACHSANs.Find(ks.MaKS);
-                //sua du lieu
-                con.KHACHSANs.Remove(model);
-               
                 con.SaveChanges();
                 return RedirectToAction("Index");
 
