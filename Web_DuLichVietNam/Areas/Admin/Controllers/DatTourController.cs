@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Web_DuLichVietNam.Models;
 using PagedList;
 using Web_DuLichVietNam.EF;
+using System.Web.UI;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
@@ -73,19 +74,24 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         }
 
         // GET: Admin/DatTour/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int matour, int makh)
         {
-            return View();
+            matour = Int32.Parse(Request.Params["matour"]);
+            makh = Int32.Parse(Request.Params["makh"]);
+
+            var dattour = new DatTourModel().GetDatTourByMa(matour, makh);
+
+            return View(dattour);
         }
 
         // POST: Admin/DatTour/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(DATTOUR dattour)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var dao = new DatTourModel();
+                dao.Delete(dattour);
                 return RedirectToAction("Index");
             }
             catch

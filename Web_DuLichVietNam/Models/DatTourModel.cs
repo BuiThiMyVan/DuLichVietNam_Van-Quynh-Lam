@@ -22,7 +22,7 @@ namespace Web_DuLichVietNam.Models
         
         public void Insert(DATTOUR entity)
         {
-            entity.NgayDat = DateTime.Now;
+           entity.NgayDat = DateTime.Now;
             db.DATTOURs.Add(entity);
             db.SaveChanges();
             
@@ -36,6 +36,13 @@ namespace Web_DuLichVietNam.Models
             dattour.SoPhongDoi = entity.SoPhongDoi;
             dattour.SoPhongDon = entity.SoPhongDon;
             dattour.MaLP = entity.MaLP;
+            db.SaveChanges();
+        }
+
+        public void Delete(DATTOUR entity)
+        {
+            var dattour = db.DATTOURs.Find(entity.MaTour, entity.MaKH);
+            db.DATTOURs.Remove(dattour);
             db.SaveChanges();
         }
 

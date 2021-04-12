@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - SB Admin v6.0.2 (https://startbootstrap.com/template/sb-admin)
 * Copyright 2013-2020 Start Bootstrap
@@ -2884,9 +2884,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-link {
-  font-weight: 400;
-  color: #007bff;
-  text-decoration: none;
+    font-weight: 400;
+    color: #be1323;
+    text-decoration: none;
 }
 .btn-link:hover {
   color: #0056b3;
@@ -10138,8 +10138,8 @@ body {
   margin: 0;
 }
 .sb-topnav.navbar-dark #sidebarToggle {
-  color: rgba(255, 255, 255, 0.5);
-}
+        color: #be1323;
+    }
 .sb-topnav.navbar-light #sidebarToggle {
   color: #212529;
 }

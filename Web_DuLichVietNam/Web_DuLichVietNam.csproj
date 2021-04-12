@@ -152,6 +152,8 @@
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\DatTourController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HuongDanVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -261,6 +263,7 @@
     <Content Include="Areas\Admin\Views\DatTour\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DatTour\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DatTour\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DatTour\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -286,6 +289,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\HuongDanVien\" />
+    <Folder Include="Areas\Admin\Views\KhachHang\" />
     <Folder Include="Database\Images\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
