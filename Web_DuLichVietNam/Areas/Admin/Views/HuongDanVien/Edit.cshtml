@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Web_DuLichVietNam.EF
+@model HUONGDANVIEN
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Hướng Dẫn Viên</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Hướng Dẫn Viên</li>
+        </ol>
+        <div class="card mb-4">
+
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Mã HDV</label>
+                            <input type="text" name="MaHDV" value=@Model.MaHDV>
+                        </div>
+                        <div class="form-input col-md-6 mt-3">
+                            <label>Tên Hướng Dẫn Viên</label>
+                            <input type="text" name="TenHDV" value=@Model.TenHDV>
+                        </div>
+                        <div class="form-input col-md-4  mt-3">
+                            <label>SDT</label>
+                            <input type="text" name="SDT" value=@Model.SDT>
+                        </div>
+                        <div class="form-input col-md-12  mt-3">
+                            <label>Địa Chỉ</label>
+                            <input type="text" name="DiaChi" value=@Model.DiaChi>
+                        </div>
+                        <div class="bottom-btn col-md-3 mt-3">
+                            <button class="btn btn-style btn-primary w-100" type="submit">Sửa Thông Tin</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+

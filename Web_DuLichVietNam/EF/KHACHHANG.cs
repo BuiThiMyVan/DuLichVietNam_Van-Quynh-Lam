@@ -22,6 +22,7 @@ namespace Web_DuLichVietNam.EF
         public string TenKH { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgaySinh { get; set; }
 
         public int? GioiTinh { get; set; }

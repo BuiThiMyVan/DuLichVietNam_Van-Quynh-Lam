@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web_DuLichVietNam.EF;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
     public class HuongDanVienController : Controller
     {
+        private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
         // GET: Admin/HuongDanVien
         public ActionResult Index()
         {
-            return View();
+            var model = con.HUONGDANVIENs.ToList();
+            return View(model);
         }
 
         // GET: Admin/HuongDanVien/Details/5
@@ -28,12 +31,12 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
 
         // POST: Admin/HuongDanVien/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(HUONGDANVIEN model)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                con.HUONGDANVIENs.Add(model);
+                con.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -45,18 +48,24 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         // GET: Admin/HuongDanVien/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = con.HUONGDANVIENs.Find(id);
+            return View(model);
         }
 
         // POST: Admin/HuongDanVien/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(HUONGDANVIEN hdv)
         {
             try
             {
-                // TODO: Add update logic here
-
+                var model = con.HUONGDANVIENs.Find(hdv.MaHDV);
+                //sua du lieu
+                model.TenHDV = hdv.TenHDV;
+                model.SDT = hdv.SDT;
+                model.DiaChi = hdv.DiaChi;
+                con.SaveChanges();
                 return RedirectToAction("Index");
+
             }
             catch
             {
@@ -67,18 +76,23 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         // GET: Admin/HuongDanVien/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var model = con.HUONGDANVIENs.Find(id);
+            return View(model);
         }
 
         // POST: Admin/HuongDanVien/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(HUONGDANVIEN hdv)
         {
             try
             {
-                // TODO: Add delete logic here
+                var model = con.HUONGDANVIENs.Find(hdv.MaHDV);
+                //sua du lieu
+                con.HUONGDANVIENs.Remove(model);
 
+                con.SaveChanges();
                 return RedirectToAction("Index");
+
             }
             catch
             {

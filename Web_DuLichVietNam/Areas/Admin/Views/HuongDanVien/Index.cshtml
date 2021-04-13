@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using Web_DuLichVietNam.EF;
+@model List<HUONGDANVIEN>
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Hướng Dẫn Viên</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Hướng Dẫn Viên</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Danh Sách Hướng Dẫn Viên
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <button onclick="location.href='@Url.Action("Create","HuongDanVien")'" class="btn btn-info mb-3">Thêm Hướng Dẫn Viên</button>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mã HDV</th>
+                                <th scope="col">Tên Hướng Dẫn Viên</th>
+                                <th scope="col">SDT</th>
+                                <th scope="col">Địa Chỉ</th>
+                                <th scope="col"></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (HUONGDANVIEN hdv in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@hdv.MaHDV</th>
+                                    <td>@hdv.TenHDV</td>
+                                    <td>@hdv.SDT</td>
+                                    <td>@hdv.DiaChi</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-danger" href="~/Admin/HuongDanVien/Delete/@hdv.MaHDV">Xóa</a>
+                                        <a class="btn btn-info" href="~/Admin/HuongDanVien/Edit/@hdv.MaHDV">Cập Nhật</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -152,6 +152,8 @@
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\DatTourController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HuongDanVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhachHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\KhachSanController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\TourController.cs" />
@@ -283,6 +285,14 @@
     <Content Include="Areas\Admin\Views\DatTour\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DatTour\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DatTour\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhachHang\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HuongDanVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HuongDanVien\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HuongDanVien\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HuongDanVien\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -308,8 +318,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\HuongDanVien\" />
-    <Folder Include="Areas\Admin\Views\KhachHang\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
