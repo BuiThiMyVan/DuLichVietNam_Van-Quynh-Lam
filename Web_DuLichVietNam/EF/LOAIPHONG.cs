@@ -18,7 +18,7 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaLP { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenLoai { get; set; }
 
         public double? GiaPhongDon { get; set; }

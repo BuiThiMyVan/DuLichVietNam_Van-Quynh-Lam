@@ -18,7 +18,7 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaTour { get; set; }
 
-        [StringLength(100)]
+        [StringLength(255)]
         public string TenTour { get; set; }
 
         public double? GiaTour { get; set; }
@@ -28,18 +28,16 @@ namespace Web_DuLichVietNam.EF
         [Column(TypeName = "date")]
         public DateTime? NgayKhoiHanh { get; set; }
 
-        public double? ThoiGian { get; set; }
+        public double? ThoiGianNgay { get; set; }
 
-        [StringLength(100)]
+        public double? ThoiGianDem { get; set; }
+
         public string DichVu { get; set; }
 
-        [StringLength(200)]
         public string HinhAnh { get; set; }
 
-        [StringLength(200)]
         public string HanhTrinh { get; set; }
 
-        [StringLength(50)]
         public string NoiXuatPhat { get; set; }
 
         public int? MaTT { get; set; }

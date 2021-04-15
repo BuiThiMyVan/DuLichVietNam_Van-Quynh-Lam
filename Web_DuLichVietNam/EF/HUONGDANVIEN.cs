@@ -18,13 +18,13 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaHDV { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenHDV { get; set; }
 
-        [StringLength(10)]
+        [StringLength(12)]
         public string SDT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(255)]
         public string DiaChi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

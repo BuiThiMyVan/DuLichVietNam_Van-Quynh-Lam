@@ -18,8 +18,10 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaTT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenTT { get; set; }
+
+        public string HinhAnh { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TOUR> TOURs { get; set; }

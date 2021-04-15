@@ -18,19 +18,18 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaKH { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenKH { get; set; }
 
         [Column(TypeName = "date")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgaySinh { get; set; }
 
         public int? GioiTinh { get; set; }
 
-        [StringLength(10)]
+        [StringLength(12)]
         public string SDT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(255)]
         public string Email { get; set; }
 
         [StringLength(50)]

@@ -24,16 +24,20 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
 
         public ActionResult Index(LoginModel model)
         {
-            var result = new AdminModel().Login(model.TenDNAdmin, model.MK);
-            if(result && ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                SessionHelper.SetSession(new UserSession() { TenDNAdmin = model.TenDNAdmin });
-                return RedirectToAction("Index", "Home");
+                var result = new AdminModel().Login(model.TenDNAdmin, model.MK);
+                if (result)
+                {
+                    SessionHelper.SetSession(new UserSession() { TenDNAdmin = model.TenDNAdmin });
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Tên Đăng Nhập hoặc Mật Khẩu không đúng!");
+                }
             }
-            else
-            {
-                ModelState.AddModelError("","Tên đăng nhập hoặc mật khẩu không đúng!");
-            }
+        
             return View(model);
         }
     }

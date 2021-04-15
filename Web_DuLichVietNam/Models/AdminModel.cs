@@ -16,6 +16,10 @@ namespace Web_DuLichVietNam.Models
             context = new DuLichVietNamDbContext();
         }
 
+        public ADMIN GetByUsername(string TenDN)
+        {
+            return context.ADMINs.SingleOrDefault(x => x.TenDNAdmin == TenDN);
+        }
         public bool Login(string tendangnhap, string matkhau)
         {
             object[] sqlParams =

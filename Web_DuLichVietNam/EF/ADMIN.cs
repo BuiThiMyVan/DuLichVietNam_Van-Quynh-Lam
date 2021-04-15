@@ -16,7 +16,7 @@ namespace Web_DuLichVietNam.EF
         [StringLength(50)]
         public string MK { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string HoTen { get; set; }
 
         public int? MaQuyen { get; set; }

@@ -32,8 +32,9 @@ namespace Web_DuLichVietNam.EF
 
         public int? SoPhongDoi { get; set; }
 
-        [StringLength(100)]
         public string YeuCau { get; set; }
+
+        public double? TongTien { get; set; }
 
         public virtual KHACHHANG KHACHHANG { get; set; }
 

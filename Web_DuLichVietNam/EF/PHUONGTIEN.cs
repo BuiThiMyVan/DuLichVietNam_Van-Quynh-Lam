@@ -18,7 +18,7 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaPT { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenPT { get; set; }
 
         public int? SoCho { get; set; }

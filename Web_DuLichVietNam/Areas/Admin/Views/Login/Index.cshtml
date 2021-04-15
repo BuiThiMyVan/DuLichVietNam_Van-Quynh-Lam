@@ -62,7 +62,7 @@
                 <h1 class="text-center mb-3">Đăng nhập</h1>
                 @using (Html.BeginForm()){
                     @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger"})
+                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" });
                     <div class="form-group">
                         <label for="user">Tên tài khoản</label>
                         @Html.TextBoxFor(model => model.TenDNAdmin, new { @class = "form-control", @name = "TenDNAdmin"})
@@ -70,7 +70,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        @Html.TextBoxFor(model => model.MK, new { @class = "form-control", @name = "MK", @type = "password"})
+                        @Html.TextBoxFor(model => model.MK, new { @class = "form-control", @name = "MK", @type = "password" })
                         <p id="error-pass" class="text-danger"></p>
                     </div>
                     <button id="btnLogin" type="submit" class="btn btn-primary">Đăng Nhập</button>

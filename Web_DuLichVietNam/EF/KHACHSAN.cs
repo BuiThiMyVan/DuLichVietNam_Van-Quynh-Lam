@@ -18,10 +18,10 @@ namespace Web_DuLichVietNam.EF
         [Key]
         public int MaKS { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string TenKS { get; set; }
 
-        [StringLength(50)]
+        [StringLength(255)]
         public string DiaChi { get; set; }
 
         public int? SoPhong { get; set; }

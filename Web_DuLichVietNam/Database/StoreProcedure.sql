@@ -22,7 +22,7 @@ BEGIN
 END
 --------------------------quynh---------------------------
 
-CREATE PROCEDURE KhachSan_GetAll
+CREATE PROC KhachSan_GetAll
 AS
 BEGIN
   SELECT *
