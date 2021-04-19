@@ -161,10 +161,13 @@
     <Compile Include="Areas\Admin\Controllers\TourController.cs" />
     <Compile Include="Areas\Admin\Controllers\WebController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DatTourController.cs" />
     <Compile Include="Controllers\DiemDenController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="EF\ADMIN.cs" />
     <Compile Include="EF\CHINHANH.cs" />
     <Compile Include="EF\CHUDE.cs" />
@@ -188,6 +191,8 @@
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\KhachSanModel.cs" />
     <Compile Include="Models\DatTourModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\TourModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -257,7 +262,10 @@
     <Content Include="Assets\admin\js\popper.min.js" />
     <Content Include="Assets\admin\js\scripts.js" />
     <Content Include="Assets\admin\js\_customers-4-multislider.js" />
+    <Content Include="Assets\client\css\bootstrap.css" />
+    <Content Include="Assets\client\css\font-awesome.css" />
     <Content Include="Assets\client\css\style-starter.css" />
+    <Content Include="Assets\client\css\tourdetail.css" />
     <Content Include="Assets\client\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\client\images\1.jpg" />
     <Content Include="Assets\client\images\2.jpg" />
@@ -305,10 +313,12 @@
     <Content Include="Assets\client\images\Webclip.mp4" />
     <Content Include="Assets\client\js\all.js" />
     <Content Include="Assets\client\js\app.js" />
+    <Content Include="Assets\client\js\bootstrap.js" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\grids.owl.carousel.js" />
     <Content Include="Assets\client\js\jquery-2.1.4.min.js" />
     <Content Include="Assets\client\js\jquery-3.3.1.min.js" />
+    <Content Include="Assets\client\js\jquery-3.5.1.js" />
     <Content Include="Assets\client\js\jquery.chocolat.js" />
     <Content Include="Assets\client\js\jquery.magnific-popup.min.js" />
     <Content Include="Assets\client\js\main.js" />
@@ -316,6 +326,9 @@
     <Content Include="Assets\client\js\owl.carousel1.js" />
     <Content Include="Assets\client\js\popper.min.js" />
     <Content Include="Assets\client\js\_customers-4-multislider.js" />
+    <Content Include="Assets\client\webfonts\fa-brands-400.svg" />
+    <Content Include="Assets\client\webfonts\fa-regular-400.svg" />
+    <Content Include="Assets\client\webfonts\fa-solid-900.svg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -369,6 +382,18 @@
     <Content Include="Assets\client\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\client\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\client\fonts\FontAwesome.otf" />
+    <Content Include="Assets\client\webfonts\fa-brands-400.eot" />
+    <Content Include="Assets\client\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\client\webfonts\fa-brands-400.woff" />
+    <Content Include="Assets\client\webfonts\fa-brands-400.woff2" />
+    <Content Include="Assets\client\webfonts\fa-regular-400.eot" />
+    <Content Include="Assets\client\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\client\webfonts\fa-regular-400.woff" />
+    <Content Include="Assets\client\webfonts\fa-regular-400.woff2" />
+    <Content Include="Assets\client\webfonts\fa-solid-900.eot" />
+    <Content Include="Assets\client\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\client\webfonts\fa-solid-900.woff" />
+    <Content Include="Assets\client\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -394,12 +419,16 @@
     <Content Include="Views\GioiThieu\Index.cshtml" />
     <Content Include="Views\DiemDen\Index.cshtml" />
     <Content Include="Views\LienHe\Index.cshtml" />
+    <Content Include="Views\DiemDen\Detail.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Areas\Admin\Views\Web\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\DatTour\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

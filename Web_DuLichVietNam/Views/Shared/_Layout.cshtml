@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -16,7 +15,10 @@ Văn, Quỳnh, Lam - TN_CNTT 17
     <meta name="author" content="Van,Quynh,Lam">
     <meta name="keyword" content="web du lich, du lich viet nam, cat giao dien, hoc css, hoc html">
     <meta name="description" content="bai tap lon web du lich">
-    <link rel="stylesheet" href="//Assets/client/client/css/style-starter.css">
+    <link rel="stylesheet" href="/Assets/client/css/font-awesome.css">
+    <link rel="stylesheet" href="/Assets/client/css/style-starter.css">
+    <link rel="stylesheet" href="/Assets/client/css/tourdetail.css">
+    <script type="text/javascript" src="/Assets/client/css/bootstrap.css"></script>
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -248,106 +250,109 @@ Văn, Quỳnh, Lam - TN_CNTT 17
                 <span class="fa fa-arrow-up" aria-hidden="true"></span>
             </button>
             <script>
-	            // When the user scrolls down 20px from the top of the document, show the button
-	            window.onscroll = function () {
-		            scrollFunction()
-	            };
-	            function scrollFunction() {
-		            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			            document.getElementById("movetop").style.display = "block";
-		            } else {
-			            document.getElementById("movetop").style.display = "none";
-		            }
-	            }
-	            // When the user clicks on the button, scroll to the top of the document
-	            function topFunction() {
-		            document.body.scrollTop = 0;
-		            document.documentElement.scrollTop = 0;
-	            }
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
             </script>
             <!-- /move top -->
         </section>
     </footer>
     <!--//footer-66 -->
+    <script type="text/javascript" src="/Assets/client/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="/Assets/client/js/bootstrap.min.js"></script>
 </body>
 </html>
-<script src="//Assets/client/client/js/jquery-3.3.1.min.js"></script>
+<script src="/Assets/client/js/jquery-3.3.1.min.js"></script>
 <!-- disable body scroll which navbar is in active -->
 <!--//-->
 <script>
-	$(function () {
-		$('.navbar-toggler').click(function () {
-			$('body').toggleClass('noscroll');
-		})
-	});
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
 </script>
 <!--/scroll-down-JS-->
 <!--pop-up-box-->
-<script src="//Assets/client/client/js/jquery.magnific-popup.min.js"></script>
+<script src="/Assets/client/js/jquery.magnific-popup.min.js"></script>
 <script>
-	$(document).ready(function () {
-		$('.popup-with-zoom-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-		});
-		$('.popup-with-move-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-slide-bottom'
-		});
-	});
+    $(document).ready(function () {
+        $('.popup-with-zoom-anim').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
+        $('.popup-with-move-anim').magnificPopup({
+            type: 'inline',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-slide-bottom'
+        });
+    });
 </script>
 <!--//pop-up-box-->
 <!-- for blog carousel slider -->
-<script src="//Assets/client/client/js/owl.carousel1.js"></script>
+<script src="/Assets/client/js/owl.carousel1.js"></script>
 <script>
-	$(document).ready(function () {
-		$("#owl-demo2").owlCarousel({
-			items: 1,
-			lazyLoad: true,
-			autoPlay: true,
-			navigation: false,
-			navigationText: ["", ""],
-			rewindNav: false,
-			scrollPerPage: true,
-			pagination: false,
-			paginationNumbers: false,
-		})
-	});
-	$(document).ready(function () {
-		$("#owl-demo1").owlCarousel({
-			loop: true,
-			margin: 20,
-			responsiveClass: true,
-			responsive: {
-				0: {
-					items: 1,
-					nav: true
-				},
-				600: {
-					items: 2,
-					nav: false
-				},
-				1000: {
-					items: 3,
-					nav: true,
-					loop: false
-				}
-			}
-		})
-	})
+    $(document).ready(function () {
+        $("#owl-demo2").owlCarousel({
+            items: 1,
+            lazyLoad: true,
+            autoPlay: true,
+            navigation: false,
+            navigationText: ["", ""],
+            rewindNav: false,
+            scrollPerPage: true,
+            pagination: false,
+            paginationNumbers: false,
+        })
+    });
+    $(document).ready(function () {
+        $("#owl-demo1").owlCarousel({
+            loop: true,
+            margin: 20,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            }
+        })
+    })
 </script>
-<script src="//Assets/client/client/js/bootstrap.min.js"></script>
+<script src="/Assetsclient/js/bootstrap.min.js"></script>
+© 2021 GitHub, Inc.

@@ -34,7 +34,13 @@ namespace Web_DuLichVietNam.EF
 
         public string DichVu { get; set; }
 
-        public string HinhAnh { get; set; }
+        public string HinhAnh1 { get; set; }
+
+        public string HinhAnh2 { get; set; }
+
+        public string HinhAnh3 { get; set; }
+
+        public string HinhAnh4 { get; set; }
 
         public string HanhTrinh { get; set; }
 

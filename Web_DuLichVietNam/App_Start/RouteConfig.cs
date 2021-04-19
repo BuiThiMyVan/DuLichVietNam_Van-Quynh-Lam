@@ -19,7 +19,13 @@ namespace Web_DuLichVietNam
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] {"Web_DuLichVietNam.Controllers" }
+                namespaces: new[] { "Web_DuLichVietNam.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Register",
+                url: "dang-ky",
+                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional }
             );
         }
     }

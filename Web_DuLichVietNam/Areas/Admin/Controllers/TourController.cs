@@ -40,7 +40,6 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
                 con.SaveChanges();
                 return RedirectToAction("Index");
 
-
             }
             catch
             {
@@ -66,9 +65,10 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
                 model.TenTour = tr.TenTour;
                 model.GiaTour = tr.GiaTour;
                 model.SoLuong = tr.SoLuong;
-                model.HinhAnh = tr.HinhAnh;
-
-
+                model.HinhAnh1 = tr.HinhAnh1;
+                model.HinhAnh2 = tr.HinhAnh2;
+                model.HinhAnh3 = tr.HinhAnh3;
+                model.HinhAnh4 = tr.HinhAnh4;
                 con.SaveChanges();
                 return RedirectToAction("Index");
 

@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Web_DuLichVietNam.EF
+@model TOUR
+
+<section class="w3l-destinations-1 ">
+    <div class="destionation-innf py-5">
+        <div class="container py-lg-5">
+            <div class="title-content mb-5">
+                <span class="sub-title">Tour</span>
+                <h3 class="hny-title mb-0">Điểm đến của riêng bạn</h3>
+                <p>Thỏa mãn đam mê du lịch khám phá qua từng điểm đến</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/Database/Images/@Model.HinhAnh1" width="773" height="430" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Database/Images/@Model.HinhAnh2" width="773" height="430" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Database/Images/@Model.HinhAnh3" width="773" height="430" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Database/Images/@Model.HinhAnh4" width="773" height="430" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-sm hidden-xs right">
+                    <div class="border p-3">
+                        <div class="info_tour mb-3"><span>@Model.TenTour</span></div>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Mã Tour:</th>
+                                    <td>@Model.MaTour</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Thời Gian:</th>
+                                    <td>@Model.ThoiGianNgay<span>ngày</span>@Model.ThoiGianDem<span>đêm</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Khởi Hành:</th>
+                                    <td colspan="2">@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Xuất Phát:</th>
+                                    <td colspan="2">@Model.NoiXuatPhat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn_dattour mt-4 p-3">
+                        <form>
+                            <div class="mb-2">
+                                <label>Giá từ:</label><span class="text_cost">&nbsp;&nbsp;@Model.GiaTour.Value.ToString("N0")</span>
+                            </div>
+                            <div class="mb-2">
+                                <input type="date" class="form-control" id="exampleInputPassword1" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3 dat_tour">Đặt Tour</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div>
+                        <span class=" sub-title detail_header"><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Điểm Nhấn Hành Trình</span>
+                        <div style="border: 1px solid #eee; width:100%" class="my-3"></div>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Hành Trình</th>
+                                    <td>Mark</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lịch Trình</th>
+                                    <td>Jacob</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Khởi Hành</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="detail">
+                        <span class="sub-title detail_header"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;Lịch Trình</span>
+                        <div style="border: 1px solid #eee; width:100%" class="my-3"></div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <span class="sub-title detail_header"><i class="fab fa-servicestack"></i>&nbsp;&nbsp;Dịch Vụ</span>
+                        <div style="border: 1px solid #eee; width:100%" class="my-3"></div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    var listItems = document.getElementsByClassName("nav-item");
+    for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+    }
+    document.getElementById("services").classList.add('active');
+</script>
+

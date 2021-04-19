@@ -1,0 +1,29 @@
+﻿.info_tour > span {
+    font-weight: bold;
+    color: #db162f;
+}
+
+.dat_tour {
+    width: 100%;
+}
+
+.departure_day {
+    width: 100%;
+    background-color: #eee;
+}
+
+.btn_dattour {
+    border: 1px solid #e59090;
+    background-color: #e59090;
+    border-radius: 25px;
+}
+
+.text_cost {
+    font-size: 36px;
+}
+
+.detail_header {
+    font-size: 24px;
+    color: #006989;
+    font-family: 'Open Sans', sans-serif;
+}
