@@ -3,6 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model PagedList.IPagedList<Web_DuLichVietNam.EF.TOUR>
+@using PagedList.Mvc;
+
 
 <section class="w3l-destinations-1">
     <div class="destionation-innf py-5">
@@ -14,145 +17,45 @@
             </div>
             <!--/destinations-grids-->
             <ul class="gallery_agile">
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g1.jpg">
-                            <img src="/Assets/client/images/g1.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Hải Phòng</h3>
+                @foreach (var t in Model)
+                {
+                    <li style="font-family:'Open Sans' , sans-serif">
+                        <div class="w3_agile_portfolio_grid" style="width:350px;height:250px">
+                            <a href="/DiemDen/Detail/@t.MaTour">
+                                <img src="/Assets/client/images/@t.HinhAnh" alt=" " class="img-fluid" />
+                                <div class="w3layouts_news_grid_pos">
+                                    <div class="wthree_text">
+                                        <h3>Khởi hành:@t.TenTour</h3>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Hải Phòng</h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g2.jpg">
-                            <img src="/Assets/client/images/g2.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Hà Nội</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Hà Nội</h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g3.jpg">
-                            <img src="/Assets/client/images/g3.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Huế</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Huế</h4>
-                        </div>
-                    </div>
-                </li>
+                            </a>
 
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g4.jpg">
-                            <img src="/Assets/client/images/g4.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Đà Nẵng</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Đà Nẵng</h4>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g5.jpg">
-                            <img src="/Assets/client/images/g5.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Nha Trang</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Nha Trang</h4>
+                        <div style="background-color:#eee" class="border my-0 p-3">
+
+                            <a style="color:#db162f;font-weight:bold" class="mb-0" href="/DiemDen/Detail/@t.MaTour">@t.TenTour</a>
+
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g6.jpg">
-                            <img src="/Assets/client/images/g6.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Đà Lạt</h3>
-                                </div>
+                        <div class="border my-0">
+                            <p class="mx-2 pt-3"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Nơi xuất phát:&nbsp;&nbsp;@t.NoiXuatPhat</p>
+                            <p class="mx-2"><i class="far fa-clock"></i>&nbsp;&nbsp;Khởi hành:&nbsp;&nbsp;@t.NgayKhoiHanh </p>
+                            <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.SoLuong</p>
+                            <div style="text-align: right">
+                                <span style="color:#db162f;font-size:25px;font-weight:bold;" class="mx-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<p style="display:inline">&nbsp;&nbsp;VND</p></span>
                             </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Đà Lạt</h4>
+
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g7.jpg">
-                            <img src="/Assets/client/images/g7.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>TP HCM</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>TP HCM</h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g8.jpg">
-                            <img src="/Assets/client/images/g8.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Hà Giang</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Hà Giang</h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3_agile_portfolio_grid">
-                        <a href="/Assets/client/images/g9.jpg">
-                            <img src="/Assets/client/images/g9.jpg" alt=" " class="img-fluid" />
-                            <div class="w3layouts_news_grid_pos">
-                                <div class="wthree_text">
-                                    <h3>Sapa</h3>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="wthree_text2">
-                            <h4>Sapa</h4>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                }
 
             </ul>
-            <!--//destinations-grids-->
+            <!-- Thêm mã phân trang -->
+            <br />
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+                new { page }))
+           
         </div>
     </div>
 </section>

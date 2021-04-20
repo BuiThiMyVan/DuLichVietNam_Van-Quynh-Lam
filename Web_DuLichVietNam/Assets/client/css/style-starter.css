@@ -6480,6 +6480,7 @@ ul.gallery_agile li {
 
 .w3_agile_portfolio_grid:hover .wthree_text2 {
   opacity: 0;
+  font-weight: bold;
 }
 
 @media all and (max-width: 767px) {

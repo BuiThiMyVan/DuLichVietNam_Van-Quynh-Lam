@@ -246,6 +246,7 @@
     <Content Include="Assets\admin\assets\images\Webclip.mp4" />
     <Content Include="Assets\admin\assets\img\error-404-monochrome.svg" />
     <Content Include="Assets\admin\css\font-awesome.css" />
+    <Content Include="Assets\client\css\font-awesome.css" />
     <Content Include="Assets\admin\css\style-starter.css" />
     <Content Include="Assets\admin\css\styles.css" />
     <Content Include="Assets\admin\js\all.js" />
