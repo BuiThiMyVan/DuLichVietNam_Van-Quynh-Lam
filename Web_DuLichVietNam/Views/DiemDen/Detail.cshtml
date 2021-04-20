@@ -12,7 +12,7 @@
         <div class="container py-lg-5">
             <div class="title-content mb-5">
                 <span class="sub-title">Tour</span>
-                <h3 class="hny-title mb-0">Điểm đến của riêng bạn</h3>
+                <h3 class="hny-title mb-0">@Model.TenTour</h3>
                 <p>Thỏa mãn đam mê du lịch khám phá qua từng điểm đến</p>
             </div>
             <div class="row">
@@ -59,7 +59,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Thời Gian:</th>
-                                    <td>@Model.ThoiGianNgay<span>ngày</span>@Model.ThoiGianDem<span>đêm</span></td>
+                                    <td>@Model.ThoiGianNgay&nbsp;&nbsp;<span>ngày&nbsp;&nbsp;</span>@Model.ThoiGianDem<span>&nbsp;&nbsp;đêm</span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Khởi Hành:</th>
@@ -72,15 +72,15 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="btn_dattour mt-4 p-3">
+                    <div class="btn_dattour mt-4 p-3" style="font-family:'Open Sans' , sans-serif">
                         <form>
                             <div class="mb-2">
                                 <label>Giá từ:</label><span class="text_cost">&nbsp;&nbsp;@Model.GiaTour.Value.ToString("N0")</span>
                             </div>
                             <div class="mb-2">
-                                <input type="date" class="form-control" id="exampleInputPassword1" readonly>
+                                <input type="text" placeholder="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")" class="form-control" id="exampleInputPassword1" value="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")" readonly>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-3 dat_tour">Đặt Tour</button>
+                            <a href="/DatTour/Index/@Model.MaTour" class="btn btn-primary mt-3 dat_tour">Đặt Tour</a>
                         </form>
                     </div>
                 </div>
@@ -92,15 +92,15 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">Hành Trình</th>
-                                    <td>Mark</td>
+                                    <td>@Model.TenTour</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Lịch Trình</th>
-                                    <td>Jacob</td>
+                                    <td>@Model.ThoiGianNgay&nbsp;&nbsp;<span>ngày&nbsp;&nbsp;</span>@Model.ThoiGianDem<span>&nbsp;&nbsp;đêm</span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Khởi Hành</th>
-                                    <td colspan="2">Larry the Bird</td>
+                                    <td colspan="2">@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -109,14 +109,18 @@
                         <span class="sub-title detail_header"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;Lịch Trình</span>
                         <div style="border: 1px solid #eee; width:100%" class="my-3"></div>
                         <div>
-
+                            <p>
+                                @Model.HanhTrinh
+                            </p>                          
                         </div>
                     </div>
                     <div>
                         <span class="sub-title detail_header"><i class="fab fa-servicestack"></i>&nbsp;&nbsp;Dịch Vụ</span>
                         <div style="border: 1px solid #eee; width:100%" class="my-3"></div>
                         <div>
-
+                            <p>
+                                @Model.DichVu
+                            </p>                          
                         </div>
                     </div>
                 </div>

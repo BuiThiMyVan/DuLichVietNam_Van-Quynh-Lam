@@ -22,10 +22,10 @@
                     <li style="font-family:'Open Sans' , sans-serif">
                         <div class="w3_agile_portfolio_grid" style="width:350px;height:250px">
                             <a href="/DiemDen/Detail/@t.MaTour">
-                                <img src="/Assets/client/images/@t.HinhAnh" alt=" " class="img-fluid" />
+                                <img src="/Assets/client/images/@t.HinhAnh1" alt=" " class="img-fluid" />
                                 <div class="w3layouts_news_grid_pos">
                                     <div class="wthree_text">
-                                        <h3>Khởi hành:@t.TenTour</h3>
+                                        <h3>Tour:@t.TenTour</h3>
                                     </div>
                                 </div>
                             </a>
@@ -41,7 +41,7 @@
                             <p class="mx-2"><i class="far fa-clock"></i>&nbsp;&nbsp;Khởi hành:&nbsp;&nbsp;@t.NgayKhoiHanh </p>
                             <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.SoLuong</p>
                             <div style="text-align: right">
-                                <span style="color:#db162f;font-size:25px;font-weight:bold;" class="mx-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<p style="display:inline">&nbsp;&nbsp;VND</p></span>
+                                <span style="color:#db162f;font-size:25px;font-weight:bold;" class="mx-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
                             </div>
 
                         </div>
@@ -53,9 +53,8 @@
             <br />
             Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 
-            @Html.PagedListPager(Model, page => Url.Action("Index",
-                new { page }))
-           
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
         </div>
     </div>
 </section>

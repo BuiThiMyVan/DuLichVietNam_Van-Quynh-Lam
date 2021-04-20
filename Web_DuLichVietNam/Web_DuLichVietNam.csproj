@@ -167,6 +167,7 @@
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="EF\ADMIN.cs" />
     <Compile Include="EF\CHINHANH.cs" />
@@ -422,6 +423,8 @@
     <Content Include="Views\LienHe\Index.cshtml" />
     <Content Include="Views\DiemDen\Detail.cshtml" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\DatTour\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -429,7 +432,6 @@
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Areas\Admin\Views\Web\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\DatTour\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

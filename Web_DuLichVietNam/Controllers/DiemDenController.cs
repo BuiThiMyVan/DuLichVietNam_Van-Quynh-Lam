@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Web_DuLichVietNam.EF;
 using PagedList;
+using Web_DuLichVietNam.Models;
+
 namespace Web_DuLichVietNam.Controllers
 {
 
@@ -13,13 +15,6 @@ namespace Web_DuLichVietNam.Controllers
         // GET: DiemDen
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
 
-        //public ActionResult Index()
-        //{
-        
-        //    var model = con.TOURs.ToList();
-
-        //    return View(model);
-        //}
         public ActionResult Index(int? page)
         {
 
@@ -41,9 +36,9 @@ namespace Web_DuLichVietNam.Controllers
             return View(links.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult Detail()
+
+        public ActionResult Detail(int id)
         {
-            int id = 1;
             var model = con.TOURs.Find(id);
             return View(model);
         }
@@ -55,10 +50,6 @@ namespace Web_DuLichVietNam.Controllers
             try
             {
                 var model = con.TOURs.Find(tr.MaTour);
-                //sua du lieu
-                con.TOURs.Remove(model);
-
-                con.SaveChanges();
                 return RedirectToAction("Detail");
 
             }
