@@ -26,6 +26,7 @@ namespace Web_DuLichVietNam.EF
         public int? SoLuong { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgayKhoiHanh { get; set; }
 
         public double? ThoiGianNgay { get; set; }

@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Web_DuLichVietNam.Models.CartItem>
+
+<section class="w3l-destinations-1">
+    <div class="destionation-innf py-5">
+        <div class="container py-lg-5">
+            <div class="title-content mb-5">
+                <span class="sub-title">Hãy lựa chọn</span>
+                <h3 class="hny-title mb-0">Điểm đến của riêng bạn</h3>
+                <p>Thỏa mãn đam mê du lịch khám phá qua từng điểm đến</p>
+            </div>
+            <!--/destinations-grids-->
+            @if (Model.Count > 0)
+            {
+                <ul class="gallery_agile">
+                    @foreach (var t in Model)
+                    {
+                        <li style="font-family:'Open Sans' , sans-serif">
+                            <div class="w3_agile_portfolio_grid" style="width:350px;height:250px">
+                                <a href="/DiemDen/Detail/@t.Tour.MaTour">
+                                    <img src="/Assets/client/images/@t.Tour.HinhAnh1" alt="" class="img-fluid" />
+                                    <div class="w3layouts_news_grid_pos">
+                                        <div class="wthree_text">
+                                            <h3>Tour:@t.Tour.TenTour</h3>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div style="background-color:#eee" class="border my-0 p-3">
+
+                                <a style="color:#db162f;font-weight:bold" class="mb-0" href="/DiemDen/Detail/@t.Tour.MaTour">@t.Tour.TenTour</a>
+
+                            </div>
+                            <div class="border my-0">
+                                <p class="mx-2 pt-3"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Nơi xuất phát:&nbsp;&nbsp;@t.Tour.NoiXuatPhat</p>
+                                <p class="mx-2"><i class="far fa-clock"></i>&nbsp;&nbsp;Khởi hành:&nbsp;&nbsp;@t.Tour.NgayKhoiHanh </p>
+                                <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.Tour.SoLuong</p>
+                                <div class="mb-2">
+                                    <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.Tour.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
+                                </div>
+
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <button class="btn btn-primary my-5">Tiếp tục xem Tour</button>
+                <button class="btn btn-danger m-5">Xóa các Tour quan tâm</button>
+            }
+            else
+            {
+                <span class="alert alert-danger">Chưa có Tour nào bạn quan tâm</span>
+            }
+
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    var listItems = document.getElementsByClassName("nav-item");
+    for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+    }
+    document.getElementById("services").classList.add('active');
+</script>
+

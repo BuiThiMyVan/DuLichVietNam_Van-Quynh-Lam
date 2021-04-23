@@ -12,9 +12,9 @@ namespace Web_DuLichVietNam.Controllers
 
     public class DiemDenController : Controller
     {
-        // GET: DiemDen
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
 
+        // GET: DiemDen       
         public ActionResult Index(int? page)
         {
 
@@ -58,5 +58,7 @@ namespace Web_DuLichVietNam.Controllers
                 return View();
             }
         }
+
+       
     }
 }

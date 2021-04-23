@@ -3,6 +3,12 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+@using Web_DuLichVietNam.EF
+@{
+    var tinhthanhlist = ViewBag.TinhThanhList as IEnumerable<TINHTHANH>;
+    var phuongtienlist = ViewBag.PhuongTienList as IEnumerable<PHUONGTIEN>;
+}
+
 <main>
     <div class="container-fluid">
         <h1 class="mt-4">Quản Lý Tour</h1>
@@ -11,7 +17,6 @@
             <li class="breadcrumb-item active">Quản Lý Tour</li>
         </ol>
         <div class="card mb-4">
-
             <div class="table-responsive p-3">
                 <form method="post" class="booking-form">
                     <div class="row book-form">
@@ -68,25 +73,33 @@
                             <input type="text" name="NoiXuatPhat">
                         </div>
                         <div class="form-input col-md-2  mt-3">
-                            <label>Mã tỉnh thành</label>
-                            <input type="number" name="MaTT">
-                        </div>
-                        <div class="form-input col-md-2  mt-3">
-                            <label>Mã phương tiện</label>
-                            <input type="number" name="MaPT">
-                        </div>
-                        <div class="form-input col-md-2  mt-3">
                             <label>Mã Hướng Dẫn Viên</label>
                             <input type="number" name="MaHDV">
                         </div>
-
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Tỉnh thành</label>
+                            <select name="MaTT" class="selectpicker select_style">
+                                @foreach (var item in tinhthanhlist)
+                                {
+                                    <option value="@item.MaTT">@item.TenTT</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Phương tiện</label>
+                            <select name="MaPT" class="selectpicker">
+                                @foreach (var item in phuongtienlist)
+                                {
+                                    <option value="@item.MaPT">@item.TenPT</option>
+                                }
+                            </select>
+                        </div>
                         <div class="bottom-btn col-md-2 mt-3">
                             <button class="btn btn-style btn-primary w-100" type="submit">Thêm</button>
                         </div>
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </main>

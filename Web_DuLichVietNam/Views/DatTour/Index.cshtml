@@ -54,31 +54,20 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Loại Phòng</th>
                                     <th scope="col">Giá Phòng Đơn</th>
                                     <th scope="col">Giá Phòng Đôi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Standard</td>
-                                    <td>300000</td>
-                                    <td>450000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Standard</td>
-                                    <td>300000</td>
-                                    <td>450000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Standard</td>
-                                    <td>300000</td>
-                                    <td>450000</td>
-                                </tr>
+                                @foreach (LOAIPHONG lp in (List<LOAIPHONG>)ViewBag.LoaiPhong)
+                                {
+                                    <tr>
+                                        <td>@lp.TenLoai</td>
+                                        <td>@lp.GiaPhongDon</td>
+                                        <td>@lp.GiaPhongDoi</td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>

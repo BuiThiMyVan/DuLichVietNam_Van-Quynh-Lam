@@ -15,6 +15,7 @@ namespace Web_DuLichVietNam.Controllers
         public ActionResult Index(int id)
         {
             var model = con.TOURs.Find(id);
+            ViewBag.LoaiPhong = con.LOAIPHONGs.ToList();
             return View(model);
         }
     }

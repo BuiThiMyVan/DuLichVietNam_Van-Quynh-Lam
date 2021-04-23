@@ -1,12 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @using Web_DuLichVietNam.EF
 @model TOUR
-
 <main>
     <div class="container-fluid">
         <h1 class="mt-4">Quản Lý Đặt Tour</h1>
@@ -74,24 +73,25 @@
                             <label>Nơi xuất phát</label>
                             <input type="text" name="NoiXuatPhat" value="@Model.NoiXuatPhat" readonly>
                         </div>
-                        <div class="form-input col-md-2 mt-3">
+                        <div class="form-input col-md-2  mt-3">
                             <label>Tỉnh thành</label>
-                            <input type="text" value="@ViewBag.TenTinhThanh.TenTT" readonly>
+                            <input type="text" name="MaTT" value="@ViewBag.TenTinhThanh.TenTT" readonly>
                         </div>
                         <div class="form-input col-md-2  mt-3">
                             <label>Phương tiện</label>
-                            <input type="text" value="@ViewBag.TenPhuongTien.TenPT" readonly>
+                            <input type="text" name="MaPT" value="@ViewBag.TenPhuongtien.TenPT" readonly>
                         </div>
                         <div class="form-input col-md-2  mt-3">
                             <label>Mã Hướng Dẫn Viên</label>
-                            <input type="number" name="MaHDV" value="@Model.MaHDV" readonly>
+                            <input type="number" name="MaHDV" value="@Model.MaHDV">
                         </div>
                         <div class="form-input col-md-3  mt-3">
-                            <br /><br />
+                            <br/><br />
                             <a href="/Admin/HuongDanVien/Index">Thông tin Hướng Dẫn Viên</a>
                         </div>
+
                         <div class="bottom-btn col-md-2 mt-3">
-                            <button class="btn btn-style btn-primary w-100" type="submit">Xóa Tour</button>
+                            <a class="btn btn-style btn-primary w-100" href="/Admin/Tour/Index">Quay Lại</a>
                         </div>
                     </div>
                 </form>
@@ -99,5 +99,4 @@
         </div>
     </div>
 </main>
-
 

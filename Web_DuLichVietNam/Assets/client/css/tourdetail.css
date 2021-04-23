@@ -27,3 +27,8 @@
     color: #006989;
     font-family: 'Open Sans', sans-serif;
 }
+
+.selectp {
+    background: #F2F2F2 url(/Assets/client/images/down.png) no-repeat 95% 52%;
+    -webkit-appearance: none;
+}

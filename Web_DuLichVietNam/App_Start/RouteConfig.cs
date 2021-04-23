@@ -27,6 +27,13 @@ namespace Web_DuLichVietNam
                 url: "dang-ky",
                 defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "AddCart",
+                url: "them-tour-xem",
+                defaults: new { controller = "DiemDen", action = "AddItem", id = UrlParameter.Optional },
+                namespaces: new[] {"Web_DuLichVietNam.Controllers"}
+            );
         }
     }
 }

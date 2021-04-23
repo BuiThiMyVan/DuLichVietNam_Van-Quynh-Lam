@@ -4641,13 +4641,13 @@ span.fa.fa-play {
 }
 
 .book-form select {
-  background: #F2F2F2 url(../images/down.png) no-repeat 95% 52%;
+  background: #F2F2F2 url(/Assets/client/images/down.png) no-repeat 95% 52%;
   -webkit-appearance: none;
 }
 
 .booking-form input[type="date"] {
-  background: #F2F2F2 url(../images/date.png) 95% 50% no-repeat;
-  -webkit-appearance: none;
+    background: #F2F2F2 url(../images/date.png) 95% 50% no-repeat;
+    -webkit-appearance: none;
 }
 
 .booking-form input[type="date"]:hover,

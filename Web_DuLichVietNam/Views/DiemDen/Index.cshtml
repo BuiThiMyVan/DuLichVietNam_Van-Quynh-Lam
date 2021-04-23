@@ -22,7 +22,7 @@
                     <li style="font-family:'Open Sans' , sans-serif">
                         <div class="w3_agile_portfolio_grid" style="width:350px;height:250px">
                             <a href="/DiemDen/Detail/@t.MaTour">
-                                <img src="/Assets/client/images/@t.HinhAnh1" alt=" " class="img-fluid" />
+                                <img src="/Assets/client/images/@t.HinhAnh1" alt="" class="img-fluid" />
                                 <div class="w3layouts_news_grid_pos">
                                     <div class="wthree_text">
                                         <h3>Tour:@t.TenTour</h3>
@@ -40,8 +40,9 @@
                             <p class="mx-2 pt-3"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Nơi xuất phát:&nbsp;&nbsp;@t.NoiXuatPhat</p>
                             <p class="mx-2"><i class="far fa-clock"></i>&nbsp;&nbsp;Khởi hành:&nbsp;&nbsp;@t.NgayKhoiHanh </p>
                             <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.SoLuong</p>
-                            <div style="text-align: right">
-                                <span style="color:#db162f;font-size:25px;font-weight:bold;" class="mx-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
+                            <div class="mb-2">
+                                <a href="/Cart/AddItem/?maTour=@t.MaTour" class="btn btn-primary mx-3" style="color: white">Quan tâm</a>
+                                <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
                             </div>
 
                         </div>
