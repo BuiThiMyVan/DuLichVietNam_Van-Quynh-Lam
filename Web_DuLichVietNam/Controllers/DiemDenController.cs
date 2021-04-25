@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Web_DuLichVietNam.EF;
 using PagedList;
 using Web_DuLichVietNam.Models;
+using Web_DuLichVietNam.Common;
 
 namespace Web_DuLichVietNam.Controllers
 {
@@ -57,6 +58,95 @@ namespace Web_DuLichVietNam.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult BookTour(int id)
+        {
+            ViewBag.Tour = con.TOURs.Find(id);
+            ViewBag.LoaiPhong = con.LOAIPHONGs.ToList();
+            var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
+            ViewBag.KhachHang = new KhachHangModel().GetByUsername(session.TenDN);           
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult BookTour(BookTourModel model)
+        {
+            ViewBag.Tour = con.TOURs.Find(model.MaTour);
+            ViewBag.LoaiPhong = con.LOAIPHONGs.ToList();
+            var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
+            ViewBag.KhachHang = new KhachHangModel().GetByUsername(session.TenDN);
+
+            if (ModelState.IsValid)
+            {
+                LOAIPHONG lp = con.LOAIPHONGs.Find(model.MaLP);
+                TOUR tour = con.TOURs.Find(model.MaTour);
+                var tongtien = (tour.GiaTour) * (model.SoLuongNL) + (tour.GiaTour) * (model.SoLuongTE) * (tour.TiLe) + (lp.GiaPhongDoi) * (model.SoPhongDoi) + (lp.GiaPhongDon) * (model.SoPhongDon);
+                model.TongTien = tongtien;
+                return RedirectToAction("Payment","DiemDen", model);
+            }
+
+            return View(model);
+        }
+
+        public ActionResult Payment(BookTourModel model)
+        {
+            DATTOUR dattour = new DATTOUR();
+            ViewBag.TourDat = con.TOURs.Find(model.MaTour);
+            ViewBag.LoaiPhongDat = con.LOAIPHONGs.Find(model.MaLP);
+            var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
+            ViewBag.KhachHangDat = new KhachHangModel().GetByUsername(session.TenDN);
+            ViewBag.GiaTE = (ViewBag.TourDat.GiaTour) * (ViewBag.TourDat.TiLe);
+
+            dattour.MaTour = model.MaTour;
+            dattour.MaKH = new KhachHangModel().GetByUsername(session.TenDN).MaKH;
+            dattour.MaLP = model.MaLP;
+            dattour.SoLuongTE = model.SoLuongTE;
+            dattour.SoLuongNL = model.SoLuongNL;
+            dattour.SoPhongDon = model.SoPhongDon;
+            dattour.SoPhongDoi = model.SoPhongDoi;
+            dattour.TongTien = model.TongTien;
+            dattour.NgayDat = model.NgayDat;
+            dattour.YeuCau = model.YeuCau;
+
+            return View(dattour);
+        }
+
+        [HttpPost]
+        public ActionResult Payment(DATTOUR model)
+        {
+            DATTOUR dattour = new DATTOUR();
+            ViewBag.TourDat = con.TOURs.Find(model.MaTour);
+            ViewBag.LoaiPhongDat = con.LOAIPHONGs.Find(model.MaLP);
+            var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
+            ViewBag.KhachHangDat = new KhachHangModel().GetByUsername(session.TenDN);
+            ViewBag.GiaTE = (ViewBag.TourDat.GiaTour) * (ViewBag.TourDat.TiLe);
+
+            var result = new DatTourModel().InsertDatTour(model);
+            var tour = con.TOURs.Find(model.MaTour);
+            tour.SoLuong = tour.SoLuong - 1;
+            con.SaveChanges();
+
+            if (result > 0)
+            {
+                ViewBag.Success = "Đặt Tour thành công!";
+            }
+            else
+            {
+                ModelState.AddModelError("", "Đặt Tour không thành công!");
+            }
+            return View(model);
+        }
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[CommonConstants.CartSession];
+            var list = new List<CartItem>();
+            if(cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+            return PartialView(list);
         }
 
        

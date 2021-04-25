@@ -5,8 +5,13 @@
 }
 
 @using Web_DuLichVietNam.EF
+@using Web_DuLichVietNam.Common
 @using Web_DuLichVietNam.Models
 @model TOUR
+
+@{ 
+    var user = Session[CommonConstants.USER_SESSION];
+}
 
 <section class="w3l-destinations-1 ">
     <div class="destionation-innf py-5">
@@ -76,12 +81,19 @@
                     <div class="btn_dattour mt-4 p-3" style="font-family:'Open Sans' , sans-serif">
                         <form>
                             <div class="mb-2">
-                                <label>Giá từ:</label><span class="text_cost">&nbsp;&nbsp;@Model.GiaTour.Value.ToString("N0")</span>
+                                <label>Giá từ:</label><span class="text_cost">&nbsp;&nbsp;@Model.GiaTour.ToString("N0")</span>
                             </div>
                             <div class="mb-2">
                                 <input type="text" placeholder="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")" class="form-control" id="exampleInputPassword1" value="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyy")" readonly>
                             </div>
-                            <a href="/DatTour/Index/@Model.MaTour" class="btn btn-primary mt-3 dat_tour">Đặt Tour</a>
+                            @if (user != null)
+                            {
+                                <a href="/DiemDen/BookTour/@Model.MaTour" class="btn btn-primary mt-3 dat_tour">Đặt Tour</a>
+                            }
+                            else
+                            {
+                                <a href="/User/Login" class="btn btn-primary mt-3 dat_tour">Đặt Tour</a>
+                            }
                         </form>
                     </div>
                 </div>

@@ -13,5 +13,11 @@ namespace Web_DuLichVietNam.Controllers
         {
             return View();
         }
+
+        public PartialViewResult TopMenu()
+        {
+            return PartialView();
+        }
+
     }
 }

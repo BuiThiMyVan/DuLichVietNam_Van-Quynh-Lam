@@ -25,14 +25,22 @@ namespace Web_DuLichVietNam
             routes.MapRoute(
                 name: "Register",
                 url: "dang-ky",
-                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+                namespaces: new[] { "Web_DuLichVietNam.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Login",
+                url: "dang-nhap",
+                defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+                namespaces: new[] { "Web_DuLichVietNam.Controllers" }
             );
 
             routes.MapRoute(
                 name: "AddCart",
                 url: "them-tour-xem",
                 defaults: new { controller = "DiemDen", action = "AddItem", id = UrlParameter.Optional },
-                namespaces: new[] {"Web_DuLichVietNam.Controllers"}
+                namespaces: new[] { "Web_DuLichVietNam.Controllers" }
             );
         }
     }

@@ -44,9 +44,6 @@
                                 <li class="nav-item active">
                                     <a class="nav-link" href="login.html">Đăng nhập</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="register.html">Đăng ký</a>
-                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -58,9 +55,9 @@
     <!-- Headers-4 block -->
     <div class="container mt-5">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
-                <h1 class="text-center mb-3">Đăng nhập</h1>
-                @using (Html.BeginForm()){
+            <div class="col-12 col-sm-12 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
+                <h1 class="text-center mb-3" style="font-weight:bold">Đăng nhập</h1>
+                @using (Html.BeginForm("Index","Login",FormMethod.Post)){
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" });
                     <div class="form-group">
@@ -89,7 +86,7 @@
                                 <div class="col-lg-4 col-md-6 sub-one-left pr-lg-4">
                                     <h2>
                                         <a class="navbar-brand" href="index.html">
-                                            3MSGl<i class="fas fa-globe-asia"></i></span>bal
+                                            3MSGl<i class="fas fa-globe-asia"></i>bal
                                         </a>
                                     </h2>
                                     <p>
@@ -110,10 +107,10 @@
                                                 <a href="#twitter"><i class="fab fa-twitter"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#google"><i class="fab fa-google-plus"></i></span></a>
+                                                <a href="#google"><i class="fab fa-google-plus"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#github"><i class="fab fa-github"></i></span></a>
+                                                <a href="#github"><i class="fab fa-github"></i></a>
                                             </li>
                                         </ul>
                                     </div>

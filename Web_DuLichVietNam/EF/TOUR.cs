@@ -21,12 +21,11 @@ namespace Web_DuLichVietNam.EF
         [StringLength(255)]
         public string TenTour { get; set; }
 
-        public double? GiaTour { get; set; }
+        public double GiaTour { get; set; }
 
         public int? SoLuong { get; set; }
 
         [Column(TypeName = "date")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? NgayKhoiHanh { get; set; }
 
         public double? ThoiGianNgay { get; set; }
@@ -47,19 +46,21 @@ namespace Web_DuLichVietNam.EF
 
         public string NoiXuatPhat { get; set; }
 
+        public double TiLe { get; set; }
+
         public int? MaTT { get; set; }
 
         public int? MaPT { get; set; }
 
         public int? MaHDV { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATTOUR> DATTOURs { get; set; }
-
         public virtual HUONGDANVIEN HUONGDANVIEN { get; set; }
 
         public virtual PHUONGTIEN PHUONGTIEN { get; set; }
 
         public virtual TINHTHANH TINHTHANH { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DATTOUR> DATTOURs { get; set; }
     }
 }

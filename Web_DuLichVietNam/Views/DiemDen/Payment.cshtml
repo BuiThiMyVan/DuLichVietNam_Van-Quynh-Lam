@@ -1,0 +1,143 @@
+﻿@using Web_DuLichVietNam.EF
+@model Web_DuLichVietNam.EF.DATTOUR
+
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    var tour = (TOUR)ViewBag.TourDat;
+    var khachhang = (KHACHHANG)ViewBag.KhachHangDat;
+    var loaiphong = (LOAIPHONG)ViewBag.LoaiPhongDat;
+}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 border p-4">
+            <h1 class="text-center mb-3" style="font-weight:bold">Xác nhận đặt Tour</h1>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success">@ViewBag.Success</div>
+            }
+            <form method="post" class="booking-form">
+                <div class="row book-form">
+                    <div class="form-input col-md-2 mt-3">
+                        <label>Mã Tour</label>
+                        <input type="number" name="MaTour" value="@Model.MaTour" readonly>
+                    </div>
+                    <div class="form-input col-md-10 mt-3">
+                        <label>Tên Tour</label>
+                        <input type="text" name="TenTour" value="@tour.TenTour" readonly>
+                    </div>
+                    <div class="form-input col-md-2 mt-3">
+                        <label>Mã Khách Hàng</label>
+                        <input type="number" name="MaKH" value="@Model.MaKH" readonly>
+                    </div>
+                    <div class="form-input col-md-4 mt-3">
+                        <label>Tên Khách Hàng</label>
+                        <input type="text" name="TenKH" value="@khachhang.TenKH" readonly>
+                    </div>
+                    <div class="form-input col-md-2 mt-3">
+                        <label>Giới Tính</label>
+                        @if (khachhang.GioiTinh == 1)
+                        {
+                            <input type="text" name="GioiTinh" value="Nam" readonly>
+                        }
+                        else
+                        {
+                            <input type="text" name="GioiTinh" value="Nữ" readonly>
+                        }
+                    </div>
+                    <div class="form-input col-md-4 mt-3">
+                        <label>Ngày Sinh</label>
+                        <input type="text" name="NgaySinh" value="@khachhang.NgaySinh.Value.ToString("dd/MM/yyyy")" readonly>
+                    </div>
+                    <div class="form-input col-md-6 mt-3">
+                        <div class="row">
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Số Lượng</label>
+                            </div>
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Trẻ Em</label>
+                                <input type="number" name="SoLuongTE" value="@Model.SoLuongTE" readonly>
+                            </div>
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Người Lớn</label>
+                                <input type="number" name="SoLuongNL" id="w3lName" value="@Model.SoLuongNL" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-input col-md-3 mt-3">
+                        <label>Giá Trẻ Em</label>
+                        <input type="text" name="GiaTE" value="@ViewBag.GiaTE.ToString("N0")" readonly>
+                    </div>
+                    <div class="form-input col-md-3 mt-3">
+                        <label>Giá Người Lớn</label>
+                        <input type="text" name="GiaNL" value="@tour.GiaTour.ToString("N0")" readonly>
+                    </div>
+                    <div class="form-input col-md-3  mt-2">
+                        <label>Loại Phòng</label>
+                        <div class="row">
+                            <div class="form-input col-md-5">
+                                <input type="number" name="MaLP" id="w3lName" value="@loaiphong.MaLP" readonly>
+                            </div>
+                            <div class="form-input col-md-7 pl-0">
+                                <input type="text" name="TenLP" id="w3lName" value="@loaiphong.TenLoai" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-input col-md-4 mt-3">
+                        <div class="row">
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Số Phòng</label>
+                            </div>
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Đơn</label>
+                                <input type="number" name="SoPhongDon" id="w3lName" value="@Model.SoPhongDon" readonly>
+                            </div>
+                            <div class="form-input col-md-4 form-inline">
+                                <label>Đôi</label>
+                                <input type="number" name="SoPhongDoi" id="w3lName" value="@Model.SoPhongDoi" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-input col-md-3 mt-3">
+                        <label>Giá Phòng Đơn</label>
+                        <input type="text" name="GiaTE" value="@loaiphong.GiaPhongDon.ToString("N0")" readonly>
+                    </div>
+                    <div class="form-input col-md-2 mt-3">
+                        <label>Giá Phòng Đôi</label>
+                        <input type="text" name="GiaNL" value="@loaiphong.GiaPhongDoi.ToString("N0")" readonly>
+                    </div>
+                    <div class="form-input col-md-12 mt-3">
+                        <label>Yêu Cầu Khác</label>
+                        <textarea rows="4" name="YeuCau" value="@Model.YeuCau">@Model.YeuCau</textarea>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 offset-md-8 col-lg-4 offset-lg-8 col-xl-4 offset-xl-8 mt-2">
+                        <span style="font-size: 24px;color:#006989; font-weight:500">Tổng thanh toán: </span>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 offset-md-8 col-lg-4 offset-lg-8 col-xl-4 offset-xl-8 p-2 mt-2 border-top" style="text-align:right">
+                        <span style="font-size: 24px;color:#006989"><span style="color:red; font-weight:bold; font-size: 35px" class="pr-0">@Model.TongTien.Value.ToString("N0")</span> VND</span>
+                    </div>
+                    <div class="bottom-btn col-md-4 mt-5">
+                        <button onclick="window.location.href='/DiemDen/Index'"class="btn btn-style btn-primary w-100">Tiếp tục Xem Tour</button>
+                    </div>
+                    <div class="bottom-btn col-md-4 mt-5">                       
+                    </div>
+                    <div class="bottom-btn col-md-4 mt-5">
+                        <button class="btn btn-style btn-primary w-100" type="submit">Xác nhận Đặt Tour</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var listItems = document.getElementsByClassName("nav-item");
+    for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+    }
+    document.getElementById("services").classList.add('active');
+</script>
+

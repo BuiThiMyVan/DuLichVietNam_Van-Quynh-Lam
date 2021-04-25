@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<Web_DuLichVietNam.Models.CartItem>
-
 <section class="w3l-destinations-1">
     <div class="destionation-innf py-5">
         <div class="container py-lg-5">
@@ -41,15 +40,15 @@
                                 <p class="mx-2"><i class="far fa-clock"></i>&nbsp;&nbsp;Khởi hành:&nbsp;&nbsp;@t.Tour.NgayKhoiHanh </p>
                                 <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.Tour.SoLuong</p>
                                 <div class="mb-2">
-                                    <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.Tour.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
+                                    <a href="/Cart/Delete/?maTour=@t.Tour.MaTour" class="btn btn-danger mx-3" style="color: white">Xóa</a>
+                                    <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.Tour.GiaTour.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
                                 </div>
-
                             </div>
                         </li>
                     }
                 </ul>
-                <button class="btn btn-primary my-5">Tiếp tục xem Tour</button>
-                <button class="btn btn-danger m-5">Xóa các Tour quan tâm</button>
+                <button id="btnContinue" onclick="window.location.href='/DiemDen/Index'" class="btn btn-primary my-5">Tiếp tục xem Tour</button>
+                <button id="btnDeleteAll" onclick="window.location.href='/Cart/DeleteAll'" class="btn btn-danger m-5">Xóa các Tour quan tâm</button>
             }
             else
             {
@@ -65,5 +64,18 @@
         listItems[i].classList.remove("active");
     }
     document.getElementById("services").classList.add('active');
+</script>
+<script>
+    var cart = {
+        init: function () {
+            cart.regEvents();
+        },
+        regEvents: function () {
+            $('#btnContinue').off('click', function () {
+                window.location.href = "/DiemDen/Index";
+            });
+        }
+    }
+    cart.init();
 </script>
 

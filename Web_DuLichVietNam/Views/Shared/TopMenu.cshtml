@@ -1,0 +1,27 @@
+﻿@using Web_DuLichVietNam.Models
+@{
+    var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
+}
+@if (Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION] == null)
+{
+    <div class="headertop_desc">
+        <div class="account_desc">
+            <ul>
+                <li id="register"><a href="/User/Register/">Đăng ký</a></li>
+                <li id="login"><a href="/User/Login">Đăng nhập</a></li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class="headertop_desc">
+        <div class="account_desc">
+            <ul>
+                <li><a href="#">Xin Chào!  @session.TenDN</a></li>
+                <li>@Html.ActionLink("Thoát", "Logout", "User")</li>
+            </ul>
+        </div>
+    </div>
+}
+

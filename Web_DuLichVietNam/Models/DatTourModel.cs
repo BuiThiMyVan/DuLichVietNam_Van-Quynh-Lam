@@ -50,5 +50,13 @@ namespace Web_DuLichVietNam.Models
         {
             return db.DATTOURs.Find(matour,makh);
         }
+
+        public int InsertDatTour(DATTOUR entity)
+        {
+            entity.NgayDat = DateTime.Now;
+            db.DATTOURs.Add(entity);
+            db.SaveChanges();
+            return entity.MaTour;
+        }
     }
 }

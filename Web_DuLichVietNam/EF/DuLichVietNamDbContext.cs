@@ -15,7 +15,6 @@ namespace Web_DuLichVietNam.EF
         public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<CHINHANH> CHINHANHs { get; set; }
         public virtual DbSet<CHUDE> CHUDEs { get; set; }
-        public virtual DbSet<DATTOUR> DATTOURs { get; set; }
         public virtual DbSet<DIEMDEN> DIEMDENs { get; set; }
         public virtual DbSet<HUONGDANVIEN> HUONGDANVIENs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
@@ -25,9 +24,9 @@ namespace Web_DuLichVietNam.EF
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHUONGTIEN> PHUONGTIENs { get; set; }
         public virtual DbSet<QUYEN> QUYENs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TINHTHANH> TINHTHANHs { get; set; }
         public virtual DbSet<TOUR> TOURs { get; set; }
+        public virtual DbSet<DATTOUR> DATTOURs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

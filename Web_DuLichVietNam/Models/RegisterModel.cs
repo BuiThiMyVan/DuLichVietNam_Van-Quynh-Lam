@@ -16,7 +16,7 @@ namespace Web_DuLichVietNam.Models
         public string TenKH { set; get; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Yêu cầu nhập ngày sinh")]
         [Display(Name = "Ngày Sinh")]
         public DateTime NgaySinh { set; get; }
 
@@ -29,6 +29,7 @@ namespace Web_DuLichVietNam.Models
 
         [Required(ErrorMessage = "Yêu cầu nhập email")]
         [Display(Name = "Email")]
+        [RegularExpression(@"^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$")]
         public string Email { set; get; }
 
         [Required(ErrorMessage = "Yêu cầu nhập tên đăng nhập")]

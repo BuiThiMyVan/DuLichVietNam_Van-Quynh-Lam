@@ -18,7 +18,7 @@ Văn, Quỳnh, Lam - TN_CNTT 17
     <link rel="stylesheet" href="/Assets/client/css/font-awesome.css">
     <link rel="stylesheet" href="/Assets/client/css/style-starter.css">
     <link rel="stylesheet" href="/Assets/client/css/tourdetail.css">
-    <script type="text/javascript" src="/Assets/client/css/bootstrap.css"></script>
+    <link type="text/javascript" src="/Assets/client/css/bootstrap.css">
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
@@ -26,14 +26,7 @@ Văn, Quỳnh, Lam - TN_CNTT 17
 <body>
     <!-- Headers-4 block -->
     <section class="w3l-header-4 mobile-header">
-        <div class="headertop_desc">
-            <div class="account_desc">
-                <ul>
-                    <li><a href="/User/Register/">Đăng ký</a></li>
-                    <li><a href="Login/Index">Đăng nhập</a></li>
-                </ul>
-            </div>
-        </div>
+        @{Html.RenderAction("TopMenu", "Home");}
         <div class="header-tophny">
             <div class="container-fluid">
                 <header class="top-headerhny">
@@ -272,8 +265,6 @@ Văn, Quỳnh, Lam - TN_CNTT 17
         </section>
     </footer>
     <!--//footer-66 -->
-    <script type="text/javascript" src="/Assets/client/js/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="/Assets/client/js/bootstrap.min.js"></script>
 </body>
 </html>
 <script src="/Assets/client/js/jquery-3.3.1.min.js"></script>
@@ -355,5 +346,5 @@ Văn, Quỳnh, Lam - TN_CNTT 17
         })
     })
 </script>
-<script src="/Assetsclient/js/bootstrap.min.js"></script>
+<script src="/Assets/client/js/bootstrap.min.js"></script>
 © 2021 GitHub, Inc.

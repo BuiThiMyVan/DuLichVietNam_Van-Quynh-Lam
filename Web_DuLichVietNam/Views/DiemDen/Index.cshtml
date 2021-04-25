@@ -6,7 +6,6 @@
 @model PagedList.IPagedList<Web_DuLichVietNam.EF.TOUR>
 @using PagedList.Mvc;
 
-
 <section class="w3l-destinations-1">
     <div class="destionation-innf py-5">
         <div class="container py-lg-5">
@@ -15,6 +14,7 @@
                 <h3 class="hny-title mb-0">Điểm đến của riêng bạn</h3>
                 <p>Thỏa mãn đam mê du lịch khám phá qua từng điểm đến</p>
             </div>
+            @{ Html.RenderAction("HeaderCart", "DiemDen");}
             <!--/destinations-grids-->
             <ul class="gallery_agile">
                 @foreach (var t in Model)
@@ -42,7 +42,7 @@
                             <p class="mx-2"><i class="far fa-user"></i>&nbsp;&nbsp;Số chỗ:&nbsp;&nbsp;@t.SoLuong</p>
                             <div class="mb-2">
                                 <a href="/Cart/AddItem/?maTour=@t.MaTour" class="btn btn-primary mx-3" style="color: white">Quan tâm</a>
-                                <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.Value.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
+                                <span style="color:#db162f;font-size:20px;font-weight:bold;" class="ml-2"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;@t.GiaTour.ToString("N0")<span style="display:inline">&nbsp;&nbsp;VND</span></span>
                             </div>
 
                         </div>

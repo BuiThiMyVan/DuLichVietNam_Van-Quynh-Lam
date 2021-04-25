@@ -5,90 +5,100 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<main role="main">
+<main role="main" >
     <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
-    <form name="frmdangky" id="frmdangky" method="post" action="#">
-        <div class="container mt-4">
+    @using (Html.BeginForm("Register", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="card mx-4">
                         <div class="card-body p-4">
-                            <h1>Đăng ký</h1>
+                            <h1 style="font-weight:bold">Đăng ký</h1>
                             <p class="text-muted">Tạo tài khoản</p>
-                            <div class="input-group mb-3">
+                            <div class="form-group">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @if(ViewBag.Success != null)
+                                {
+                                    <div class="alert alert-success">@ViewBag.Success</div>
+                                }
+                            </div>                           
+                            <div class="form-group my-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-user-circle"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.TenDN, htmlAttributes: new { @class = "form-control", @placeholder = "Tên đăng nhập"})
-                                @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger"})                               
+                                    @Html.TextBoxFor(model => model.TenDN, htmlAttributes: new { @class = "form-control", @placeholder = "Tên đăng nhập" })
+                                </div>                            
+                                @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+                                
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-unlock-alt"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.MK, htmlAttributes: new { @class = "form-control", @placeholder = "Mật khẩu" })
+                                    @Html.TextBoxFor(model => model.MK, htmlAttributes: new { @class = "form-control", @type = "password", @placeholder = "Mật khẩu" })
+                                </div>                              
                                 @Html.ValidationMessageFor(model => model.MK, "", new { @class = "text-danger" })
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-check-circle"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.XacNhanMK, htmlAttributes: new { @class = "form-control", @placeholder = "Xác nhận mật khẩu" })
+                                    @Html.TextBoxFor(model => model.XacNhanMK, htmlAttributes: new { @class = "form-control", @type = "password", @placeholder = "Xác nhận mật khẩu" })
+                                </div>                               
                                 @Html.ValidationMessageFor(model => model.XacNhanMK, "", new { @class = "text-danger" })
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-file-signature"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.TenKH, htmlAttributes: new { @class = "form-control", @placeholder = "Họ Tên" })
+                                    @Html.TextBoxFor(model => model.TenKH, htmlAttributes: new { @class = "form-control", @placeholder = "Họ Tên" })
+                                </div>                            
                                 @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-table"></i>&nbsp;&nbsp;&nbsp;&nbsp;Ngày Sinh
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.NgaySinh, htmlAttributes: new { @class = "form-control", @type = "date", @placeholder = "Ngày Sinh" })
+                                    @Html.TextBoxFor(model => model.NgaySinh, htmlAttributes: new { @class = "form-control", @type = "date", @placeholder = "Ngày Sinh" })
+                                </div>                                
                                 @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-venus-mars"></i>&nbsp;&nbsp;&nbsp;&nbsp;Giới Tính
                                     </span>
+                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    @Html.DropDownListFor(model => model.GioiTinh, new List<SelectListItem>
+                                    {
+                                          new SelectListItem { Text = "Nam", Value = "1", Selected=true},
+                                          new SelectListItem { Text = "Nữ", Value = "0"}
+                                    }, "Giới tính")
                                 </div>
-                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                @Html.DropDownListFor(model => model.GioiTinh, new List<SelectListItem>
-                                {
-                                      new SelectListItem { Text = "Nam", Value = "1", Selected=true},
-                                      new SelectListItem { Text = "Nữ", Value = "2"}
-                                }, "Giới tính")
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-phone"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.SDT, htmlAttributes: new { @class = "form-control", @placeholder = "Số Điện Thoại" })
+                                    @Html.TextBoxFor(model => model.SDT, htmlAttributes: new { @class = "form-control", @placeholder = "Số Điện Thoại" })
+                                </div>                              
                                 @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
                             </div>
-                            <div class="input-group mb-3">
+                            <div class="form-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="fas fa-at"></i>
                                     </span>
-                                </div>
-                                @Html.TextBoxFor(model => model.Email, htmlAttributes: new { @class = "form-control", @placeholder = "Email" })
+                                    @Html.TextBoxFor(model => model.Email, htmlAttributes: new { @class = "form-control", @placeholder = "Email" })
+                                </div>                               
                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                             </div>
                             <button class="btn btn-block btn-success" type="submit" name="">Tạo tài khoản</button>
@@ -96,8 +106,8 @@
                         <div class="card-footer p-4">
                             <div class="row">
                                 <div class="col-12">
-                                    <center>Nếu bạn đã có Tài khoản, xin mời Đăng nhập</center>
-                                    <a class="btn btn-primary form-control">Đăng nhập</a>
+                                    <center class="my-3">Nếu bạn đã có Tài khoản, xin mời Đăng nhập</center>
+                                    <btn onclick="window.location.href='/User/Login'" class="btn btn-primary form-control">Đăng nhập</btn>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +115,14 @@
                 </div>
             </div>
         </div>
-    </form>
+
+    }
     <!-- End block content -->
 </main>
-
+<script type="text/javascript">
+    var listItems = document.getElementsByClassName("nav-item");
+    for (let i = 0; i < listItems.length; i++) {
+        listItems[i].classList.remove("active");
+    }
+    document.getElementById("register").classList.add('active');
+</script>

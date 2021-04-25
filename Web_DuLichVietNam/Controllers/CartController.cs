@@ -11,7 +11,7 @@ namespace Web_DuLichVietNam.Controllers
     public class CartController : Controller
     {
         DuLichVietNamDbContext con = new DuLichVietNamDbContext();
-        private const string CartSession = "";
+        private const string CartSession = "CartSession";
         // GET: Cart
         public ActionResult Index()
         {
@@ -53,6 +53,20 @@ namespace Web_DuLichVietNam.Controllers
                 // gán vào session
                 Session[CartSession] = list;
             }
+            return RedirectToAction("Index", "DiemDen");
+        }
+
+        public ActionResult DeleteAll()
+        {
+            Session[CartSession] = null;
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int maTour)
+        {
+            var sessionCart = (List<CartItem>)Session[CartSession];
+            sessionCart.RemoveAll(x => x.Tour.MaTour == maTour);
+            Session[CartSession] = sessionCart;
             return RedirectToAction("Index");
         }
     }

@@ -21,7 +21,6 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
         public ActionResult Index(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -34,7 +33,7 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Tên Đăng Nhập hoặc Mật Khẩu không đúng!");
+                    ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng!");
                 }
             }
         

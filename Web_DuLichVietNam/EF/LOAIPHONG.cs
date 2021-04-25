@@ -21,15 +21,15 @@ namespace Web_DuLichVietNam.EF
         [StringLength(100)]
         public string TenLoai { get; set; }
 
-        public double? GiaPhongDon { get; set; }
+        public double GiaPhongDon { get; set; }
 
-        public double? GiaPhongDoi { get; set; }
+        public double GiaPhongDoi { get; set; }
 
         public int? MaKS { get; set; }
 
+        public virtual KHACHSAN KHACHSAN { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATTOUR> DATTOURs { get; set; }
-
-        public virtual KHACHSAN KHACHSAN { get; set; }
     }
 }
