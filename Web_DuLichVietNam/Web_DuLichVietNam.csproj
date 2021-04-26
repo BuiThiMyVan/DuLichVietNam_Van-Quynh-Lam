@@ -163,6 +163,7 @@
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ChinhSuaThongTinController.cs" />
     <Compile Include="Controllers\DiemDenController.cs" />
     <Compile Include="Controllers\GioiThieuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1076,6 +1077,7 @@
     <Content Include="Views\DiemDen\BookTour.cshtml" />
     <Content Include="Views\DiemDen\View.cshtml" />
     <Content Include="Views\DiemDen\Payment.cshtml" />
+    <Content Include="Views\ChinhSuaThongTin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

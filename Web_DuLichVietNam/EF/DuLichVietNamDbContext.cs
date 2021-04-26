@@ -8,7 +8,7 @@ namespace Web_DuLichVietNam.EF
     public partial class DuLichVietNamDbContext : DbContext
     {
         public DuLichVietNamDbContext()
-            : base("name=DuLichVietNamDbContext")
+            : base("name=DuLichVietNamDbContext2")
         {
         }
 
