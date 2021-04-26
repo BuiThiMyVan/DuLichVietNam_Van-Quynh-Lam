@@ -31,7 +31,18 @@
                         </div>
                         <div class="form-input col-md-2  mt-3">
                             <label>GioiTinh</label>
-                            <input type="number" name="GioiTinh" value="@Model.GioiTinh">
+                            <select name="GioiTinh" class="selectpicker select_style">
+                                @if (Model.GioiTinh == 1)
+                                {
+                                    <option value="1" selected="selected">Nam</option>
+                                    <option value="0">Nữ</option>
+                                }
+                                else
+                                {
+                                    <option value="1">Nam</option>
+                                    <option value="0"  selected="selected">Nữ</option>
+                                }
+                            </select>
                         </div>
                         <div class="form-input col-md-4  mt-3">
                             <label>SDT</label>

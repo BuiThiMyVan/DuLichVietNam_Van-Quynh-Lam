@@ -1,0 +1,111 @@
+﻿@using Web_DuLichVietNam.EF
+@using Web_DuLichVietNam.Models
+@model Web_DuLichVietNam.Models.TourModel
+
+@{
+    var tinhthanh = (TINHTHANH)ViewBag.TenTinhThanh;
+    var phuongtien = (PHUONGTIEN)ViewBag.TenPhuongTien;
+}
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Đặt Tour</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Tour</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Mã Tour</label>
+                            <input type="number" name="MaTour" value="@Model.MaTour" readonly>
+                        </div>
+                        <div class="form-input col-md-10 mt-3">
+                            <label>Tên tour</label>
+                            <input type="text" name="TenTour" value="@Model.TenTour" readonly>
+                        </div>
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Giá tour</label>
+                            <input type="number" name="GiaTour" value="@Model.GiaTour" readonly>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Số lượng</label>
+                            <input type="number" name="SoLuong" value="@Model.SoLuong" readonly>
+                        </div>
+                        <div class="form-input col-md-4  mt-3">
+                            <label>Ngày khởi hành</label>
+                            <input type="text" name="NgayKhoiHanh" value="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyyy")" readonly>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Số Ngày</label>
+                            <input type="number" name="ThoiGianNgay" value="@Model.ThoiGianNgay" readonly>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Số Đêm</label>
+                            <input type="number" name="ThoiGianDem" value="@Model.ThoiGianDem" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <label>Hình ảnh 1</label>
+                            <input type="text" name="HinhAnh1" value="@Model.HinhAnh1" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <label>Hình ảnh 2</label>
+                            <input type="text" name="HinhAnh2" value="@Model.HinhAnh2" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <label>Hình ảnh 3</label>
+                            <input type="text" name="HinhAnh3" value="@Model.HinhAnh3" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <label>Hình ảnh 4</label>
+                            <input type="text" name="HinhAnh4" value="@Model.HinhAnh4" readonly>
+                        </div>
+                        <div class="form-input col-md-12  mt-3">
+                            <label>Dịch vụ</label>
+                            <textarea rows="4" name="DichVu" value="@Model.DichVu" readonly>@Model.DichVu</textarea>
+                        </div>
+                        <div class="form-input col-md-12  mt-3">
+                            <label>Hành trình</label>
+                            <textarea rows="4" name="HanhTrinh" value="@Model.HanhTrinh" readonly>@Model.HanhTrinh</textarea>
+                        </div>
+                        <div class="form-input col-md-12  mt-3">
+                            <label>Nơi xuất phát</label>
+                            <input type="text" name="NoiXuatPhat" value="@Model.NoiXuatPhat" readonly>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Tỉ Lệ</label>
+                            <input type="number" step="0.01" name="TiLe" value="@Model.TiLe" readonly>
+                        </div>
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Tỉnh thành</label>
+                            <input type="text" value="@tinhthanh.TenTT" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <label>Phương tiện</label>
+                            <input type="text" value="@phuongtien.TenPT" readonly>
+                        </div>
+                        <div class="form-input col-md-2  mt-3">
+                            <label>Mã Hướng Dẫn Viên</label>
+                            <input type="number" name="MaHDV" value="@Model.MaHDV" readonly>
+                        </div>
+                        <div class="form-input col-md-3  mt-3">
+                            <br /><br />
+                            <a href="/Admin/HuongDanVien/Index">Thông tin Hướng Dẫn Viên</a>
+                        </div>
+                        <div class="bottom-btn col-md-2 mt-3">
+                            <button class="btn btn-style btn-primary w-100" type="submit">Xóa Tour</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+

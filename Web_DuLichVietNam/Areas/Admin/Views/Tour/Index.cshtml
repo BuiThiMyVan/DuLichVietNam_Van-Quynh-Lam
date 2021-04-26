@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Web_DuLichVietNam.EF;
+@model List<TOUR>
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Tour</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Trang Chủ Admin</a></li>
+            <li class="breadcrumb-item active">Quản Lý Tour</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Danh Sách Các Tour
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <button onclick="location.href='@Url.Action("Create","Tour")'" class="btn btn-info mb-3">Thêm Tour</button>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mã Tour</th>
+                                <th scope="col">Tên Tour</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col"></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (TOUR tr in Model)
+                            {
+                            <tr>
+                                <th scope="row">@tr.MaTour</th>
+                                <td>@tr.TenTour</td>
+                                <td>@tr.GiaTour</td>
+                                <td><a href="/Admin/Tour/Details/@tr.MaTour">Chi Tiết Tour</a></td>
+                                <td class="text-center">
+                                    <a class="btn btn-danger" href="~/Admin/Tour/Delete/@tr.MaTour">Xóa</a>
+                                    <a class="btn btn-info" href="~/Admin/Tour/Edit/@tr.MaTour">Cập Nhật</a>
+                                </td>
+                            </tr>
+                            }
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

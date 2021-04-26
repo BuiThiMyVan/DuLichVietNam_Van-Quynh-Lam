@@ -81,7 +81,7 @@ namespace Web_DuLichVietNam.Controllers
             {
                 LOAIPHONG lp = con.LOAIPHONGs.Find(model.MaLP);
                 TOUR tour = con.TOURs.Find(model.MaTour);
-                var tongtien = (tour.GiaTour) * (model.SoLuongNL) + (tour.GiaTour) * (model.SoLuongTE) * (tour.TiLe) + (lp.GiaPhongDoi) * (model.SoPhongDoi) + (lp.GiaPhongDon) * (model.SoPhongDon);
+                var tongtien = (tour.GiaTour) * (model.SoLuongNL) + (tour.GiaTour) * (model.SoLuongTE) * (double)(tour.TiLe/100) + (lp.GiaPhongDoi) * (model.SoPhongDoi) + (lp.GiaPhongDon) * (model.SoPhongDon);
                 model.TongTien = tongtien;
                 return RedirectToAction("Payment","DiemDen", model);
             }
@@ -96,7 +96,7 @@ namespace Web_DuLichVietNam.Controllers
             ViewBag.LoaiPhongDat = con.LOAIPHONGs.Find(model.MaLP);
             var session = (DangNhapModel)Session[Web_DuLichVietNam.Common.CommonConstants.USER_SESSION];
             ViewBag.KhachHangDat = new KhachHangModel().GetByUsername(session.TenDN);
-            ViewBag.GiaTE = (ViewBag.TourDat.GiaTour) * (ViewBag.TourDat.TiLe);
+            ViewBag.GiaTE = (ViewBag.TourDat.GiaTour) * (double)(ViewBag.TourDat.TiLe/100);
 
             dattour.MaTour = model.MaTour;
             dattour.MaKH = new KhachHangModel().GetByUsername(session.TenDN).MaKH;

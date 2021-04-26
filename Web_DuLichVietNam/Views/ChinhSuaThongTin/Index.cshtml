@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Web_DuLichVietNam.EF;
+@model KHACHHANG
+
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Quản Lý Tài Khoản</h1>
+        <ol class="breadcrumb mb-4">
+           
+            <li class="breadcrumb-item active">Quản Lý Tài khoản</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="table-responsive p-3">
+                <form method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Mã khách hàng</label>
+                            <input type="number" name="MaKH" value="@Model.MaKH" readonly>
+                        </div>
+                        <div class="form-input col-md-9 mt-3">
+                            <label>Tên khách hàng</label>
+                            <input type="text" name="TenKH" value="@Model.TenKH">
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <label>Ngày sinh</label>
+                            <input type="text" name="NgaySinh" value="@Model.NgaySinh.Value.ToString("dd/MM/yyy")">
+                        </div>
+                        <div class="form-input col-md-2 mt-3">
+                            <label>Giới tính</label>
+                            <select name="GioiTinh" class="selectpicker select_style">
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Số điện thoại</label>
+                            <input type="text" name="SDT" value="@Model.SDT">
+                        </div>
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Email</label>
+                            <input type="text" name="Email" value="@Model.Email">
+                        </div>
+                        <div class="form-input col-md-6 mt-3">
+                            <label>Tên đăng nhập</label>
+                            <input type="text" name="TenDN" value="@Model.TenDN">
+                        </div>
+                        <div class="form-input col-md-6 mt-3">
+                            <label>Mật Khẩu</label>
+                            <input type="text" name="MK" value="">
+                        </div>
+                        <div class="bottom-btn col-md-4 mt-3">
+                            <button class="btn btn-style btn-primary w-100" type="submit">Sửa Thông Tin</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+

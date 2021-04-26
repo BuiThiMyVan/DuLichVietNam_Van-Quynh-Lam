@@ -23,6 +23,10 @@ namespace Web_DuLichVietNam.Models
         public void Insert(DATTOUR entity)
         {
            entity.NgayDat = DateTime.Now;
+            var tour = db.TOURs.Find(entity.MaTour);
+            tour.SoLuong = tour.SoLuong - 1;
+            var loaiphong = db.LOAIPHONGs.Find(entity.MaLP);
+            entity.TongTien = (tour.GiaTour) * (entity.SoLuongNL) + (tour.GiaTour) * (entity.SoLuongTE) *(double)(tour.TiLe/100) + (loaiphong.GiaPhongDoi) * (entity.SoPhongDoi) + (loaiphong.GiaPhongDon) * (entity.SoPhongDon);
             db.DATTOURs.Add(entity);
             db.SaveChanges();
             

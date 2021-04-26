@@ -3,7 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@using Web_DuLichVietNam.EF
+@{
+    var chudelist = ViewBag.ChuDeList as IEnumerable<CHUDE>;
+   
+}
+<!-- /contact-grid1 -->
 <section class="w3l-contact-section-main">
     <div class="contact-sec-inner">
         <div class="contacts-5-grid">
@@ -149,27 +154,37 @@
                 <p class="para-contact mb-lg-5 mb-4">
                     Hãy để lại phương thức liên hệ ngắn gọn dưới đây
                 </p>
-                <form action="" method="post">
+                <form method="post">
+
                     <div class="row">
                         <div class="col-lg-4 form-group">
                             <label for="w3lName">Họ tên</label>
-                            <input type="text" name="w3lName" id="w3lName">
+
+                            <input type="text" name="HoTen">
                         </div>
                         <div class="col-lg-4 form-group">
                             <label for="w3lSender">Email</label>
-                            <input type="email" name="w3lSender" id="w3lSender">
+                            <input type="text" name="Email">
                         </div>
                         <div class="col-lg-4 form-group">
-                            <label for="w3lSubject">Chủ đề</label>
-                            <input type="text" name="w3lSubject" id="w3lSubject">
+                            <label>Chủ đề</label>
+                            <br />
+                            <select name="MaCD" class="selectpicker select_style form-group" style="margin-top: 10px;width:349px; border:1px solid #dcdada; border-radius:10px; height:62px">
+                                @foreach (var item in chudelist)
+                                {
+                                    <option value="@item.MaCD">@item.TenCD</option>
+                                }
+                            </select>
                         </div>
                     </div>
+
+
                     <div class="form-group">
                         <label for="w3lSubject">Tin nhắn</label>
-                        <textarea name="w3lMessage" placeholder="" required=""></textarea>
+                        <textarea name="TinNhan" placeholder="" required=""></textarea>
                     </div>
                     <div class="form-submit text-right mt-4">
-                        <button type="submit" class="btn submit">Trao Đổi Ngay</button>
+                        <button type="submit" class="btn submit">Đăng ký</button>
                     </div>
                 </form>
             </div>
@@ -177,10 +192,3 @@
     </div>
 </section>
 <!-- //contact-form -->
-<script type="text/javascript">
-    var listItems = document.getElementsByClassName("nav-item");
-    for(let i=0; i<listItems.length;i++){
-        listItems[i].classList.remove("active");
-    }
-    document.getElementById("contact").classList.add('active');
-</script>

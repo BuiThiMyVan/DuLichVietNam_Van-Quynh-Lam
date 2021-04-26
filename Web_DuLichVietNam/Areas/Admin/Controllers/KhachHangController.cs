@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Web_DuLichVietNam.EF;
+using Web_DuLichVietNam.Models;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
     public class KhachHangController : Controller
     {
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
+
+        KhachHangModel khachhang = new KhachHangModel();
+
         // GET: Admin/KhachHang
         public ActionResult Index()
         {
@@ -34,8 +38,9 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         public ActionResult Create(KHACHHANG model)
         {
             try
-            {
+            {               
                 model.MaQuyen = 2;
+                model.MK = khachhang.EncodePassword(model.MK);
                 con.KHACHHANGs.Add(model);
                 con.SaveChanges();
                 return RedirectToAction("Index");
@@ -68,7 +73,7 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
                 model.GioiTinh = kh.GioiTinh;
                 model.SDT = kh.SDT;
                 model.TenDN = kh.TenDN;
-                model.MK = kh.MK;
+                model.MK = khachhang.EncodePassword(kh.MK);
                 model.Email = kh.Email;
                 con.SaveChanges();
                 return RedirectToAction("Index");

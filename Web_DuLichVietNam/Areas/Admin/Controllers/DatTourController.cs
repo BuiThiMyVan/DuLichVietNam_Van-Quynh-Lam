@@ -13,6 +13,8 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
     public class DatTourController : Controller
     {
         // GET: Admin/DatTour
+        DuLichVietNamDbContext con = new DuLichVietNamDbContext();
+
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
             var dao = new DatTourModel();
@@ -21,9 +23,27 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         }
 
         // GET: Admin/DatTour/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int matour, int makh)
         {
-            return View();
+            DATTOUR dattour = new DATTOUR();
+            var model = new DatTourModel().GetDatTourByMa(matour, makh);
+            ViewBag.TourDat = con.TOURs.Find(matour);
+            ViewBag.LoaiPhongDat = con.LOAIPHONGs.Find(model.MaLP);
+            ViewBag.KhachHangDat = con.KHACHHANGs.Find(makh);
+            ViewBag.GiaTE = (ViewBag.TourDat.GiaTour) * (double)(ViewBag.TourDat.TiLe/100);
+
+            dattour.MaTour = model.MaTour;
+            dattour.MaKH = model.MaKH;
+            dattour.MaLP = model.MaLP;
+            dattour.SoLuongTE = model.SoLuongTE;
+            dattour.SoLuongNL = model.SoLuongNL;
+            dattour.SoPhongDon = model.SoPhongDon;
+            dattour.SoPhongDoi = model.SoPhongDoi;
+            dattour.TongTien = model.TongTien;
+            dattour.NgayDat = model.NgayDat;
+            dattour.YeuCau = model.YeuCau;
+
+            return View(dattour);
         }
 
         // GET: Admin/DatTour/Create

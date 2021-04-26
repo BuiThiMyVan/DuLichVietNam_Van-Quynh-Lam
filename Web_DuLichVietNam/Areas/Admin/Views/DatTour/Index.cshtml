@@ -30,9 +30,7 @@
                                 <th scope="col">Người Lớn</th>
                                 <th scope="col">Trẻ Em</th>
                                 <th scope="col">Ngày Đặt</th>
-                                <th scope="col">Mã LP</th>
-                                <th scope="col">Phòng Đơn</th>
-                                <th scope="col">Phòng Đôi</th>
+                                <th scope="col"></th>
 
                             </tr>
                         </thead>
@@ -45,9 +43,7 @@
                                     <td>@item.SoLuongNL</td>
                                     <td>@item.SoLuongTE</td>
                                     <td>@item.NgayDat.Value.ToString("dd/MM/yyy")</td>
-                                    <td>@item.MaLP</td>
-                                    <td>@item.SoPhongDon</td>
-                                    <td>@item.SoPhongDoi</td>
+                                    <td><a href="/Admin/DatTour/Details/?matour=@item.MaTour&makh=@item.MaKH">Chi Tiết</a></td>
                                     <td class="text-center">
                                         <a class="btn btn-danger" href="/Admin/DatTour/Delete/?matour=@item.MaTour&makh=@item.MaKH">Xóa</a>
                                         <a class="btn btn-info" href="/Admin/DatTour/Edit/?matour=@item.MaTour&makh=@item.MaKH">Cập Nhật</a>
