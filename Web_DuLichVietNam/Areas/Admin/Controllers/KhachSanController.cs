@@ -7,7 +7,7 @@ using Web_DuLichVietNam.Models;
 using Web_DuLichVietNam.EF;
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class KhachSanController : Controller
+    public class KhachSanController : BaseController
     {
         // GET: Admin/KhachSan
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();

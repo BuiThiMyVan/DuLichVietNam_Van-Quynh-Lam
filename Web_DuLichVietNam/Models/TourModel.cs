@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Web_DuLichVietNam.Models
 {
@@ -30,6 +31,7 @@ namespace Web_DuLichVietNam.Models
         public int ThoiGianDem { set; get; }
 
         [Required(ErrorMessage = "Yêu cầu nhập dịch vụ")]
+        [AllowHtml]
         public string DichVu { set; get; }
 
         public string HinhAnh1 { set; get; }
@@ -41,6 +43,7 @@ namespace Web_DuLichVietNam.Models
         public string HinhAnh4 { set; get; }
 
         [Required(ErrorMessage = "Yêu cầu nhập hành trình")]
+        [AllowHtml]
         public string HanhTrinh { set; get; }
 
         [Required(ErrorMessage = "Yêu cầu nhập nơi xuất phát")]

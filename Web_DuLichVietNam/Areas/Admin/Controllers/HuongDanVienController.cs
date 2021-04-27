@@ -7,7 +7,7 @@ using Web_DuLichVietNam.EF;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class HuongDanVienController : Controller
+    public class HuongDanVienController : BaseController
     {
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
         // GET: Admin/HuongDanVien

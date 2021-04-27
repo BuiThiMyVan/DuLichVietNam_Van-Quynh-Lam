@@ -10,7 +10,7 @@ using System.Web.UI;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class DatTourController : Controller
+    public class DatTourController : BaseController
     {
         // GET: Admin/DatTour
         DuLichVietNamDbContext con = new DuLichVietNamDbContext();

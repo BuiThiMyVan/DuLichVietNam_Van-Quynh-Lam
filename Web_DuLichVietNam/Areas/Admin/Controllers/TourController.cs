@@ -8,7 +8,7 @@ using Web_DuLichVietNam.EF;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class TourController : Controller
+    public class TourController : BaseController
     {
         // GET: Admin/Tour
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();

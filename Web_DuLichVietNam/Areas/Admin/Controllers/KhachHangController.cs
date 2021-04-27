@@ -8,7 +8,7 @@ using Web_DuLichVietNam.Models;
 
 namespace Web_DuLichVietNam.Areas.Admin.Controllers
 {
-    public class KhachHangController : Controller
+    public class KhachHangController : BaseController
     {
         private DuLichVietNamDbContext con = new DuLichVietNamDbContext();
 
