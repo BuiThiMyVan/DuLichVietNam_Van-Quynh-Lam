@@ -153,9 +153,28 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
         // GET: Admin/Tour/Delete/5
         public ActionResult Delete(int id)
         {
-            var model = con.TOURs.Find(id);
-            ViewBag.TenTinhThanh = con.TINHTHANHs.Find(model.MaTT);
-            ViewBag.TenPhuongTien = con.PHUONGTIENs.Find(model.MaPT);
+            var tr = con.TOURs.Find(id);
+            ViewBag.TenTinhThanh = con.TINHTHANHs.Find(tr.MaTT);
+            ViewBag.TenPhuongTien = con.PHUONGTIENs.Find(tr.MaPT);
+            TourModel model = new TourModel();
+            model.MaTour = tr.MaTour;
+            model.TenTour = tr.TenTour;
+            model.GiaTour = tr.GiaTour;
+            model.SoLuong = (int)tr.SoLuong;
+            model.HinhAnh1 = tr.HinhAnh1;
+            model.HinhAnh2 = tr.HinhAnh2;
+            model.HinhAnh3 = tr.HinhAnh3;
+            model.HinhAnh4 = tr.HinhAnh4;
+            model.DichVu = tr.DichVu;
+            model.HanhTrinh = tr.HanhTrinh;
+            model.NgayKhoiHanh = (DateTime)tr.NgayKhoiHanh;
+            model.NoiXuatPhat = tr.NoiXuatPhat;
+            model.ThoiGianDem = (int)tr.ThoiGianDem;
+            model.ThoiGianNgay = (int)tr.ThoiGianNgay;
+            model.TiLe = tr.TiLe;
+            model.MaHDV = (int)tr.MaHDV;
+            model.MaPT = (int)tr.MaPT;
+            model.MaTT = (int)tr.MaTT;
             return View(model);
         }
 

@@ -53,6 +53,25 @@
                     Trường hợp quý khách không đồng ý các khoản phát sinh, phiếu xác nhận booking của quý khách sẽ không có hiệu lực.
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-3 border-top">
+                    <h3 class="m-4" style="text-transform:uppercase; text-align:center">Bảng Giá Chi Tiết Tour</h3>
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Giá Người Lớn</th>
+                                    <th scope="col">Giá Trẻ Em(< 12 tuổi)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@tour.GiaTour</td>
+                                    <td>@tour.TiLe % so với Người Lớn</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 my-3 border-top">
                     <h3 class="m-4" style="text-transform:uppercase; text-align:center">Bảng Giá Chi Tiết Loại Phòng</h3>
                     <div>
                         <table class="table table-bordered">
@@ -149,13 +168,13 @@
                             <div class="form-input col-md-12 mt-3">
                                 <label>Yêu Cầu Khác</label>
                                 <textarea rows="4" type="text" name="YeuCau" placeholder="Yêu Cầu Khác"></textarea>
-                            </div>                        
+                            </div>
                             <div class="form-input col-md-4 mt-3"></div>
                             <div class="bottom-btn col-md-4 mt-5">
-                                <button class="btn btn-style btn-primary w-100" type="submit" >Gửi Thông Tin</button>
+                                <button class="btn btn-style btn-primary w-100" type="submit">Gửi Thông Tin</button>
                             </div>
                         </div>
-                      }
+                    }
                 </div>
             </div>
         </div>

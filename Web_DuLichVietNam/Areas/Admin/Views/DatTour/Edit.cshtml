@@ -16,11 +16,11 @@
             <div class="table-responsive p-3">
                 <form method="post" class="booking-form">
                     <div class="row book-form">
-                        <div class="form-input col-md-4 mt-3">
+                        <div class="form-input col-md-2 mt-3">
                             <label>Mã Tour</label>
                             <input type="number" name="MaTour" value="@Model.MaTour">
                         </div>
-                        <div class="form-input col-md-4 mt-3">
+                        <div class="form-input col-md-2 mt-3">
                             <label>Mã Khách Hàng</label>
                             <input type="number" name="MaKH" value="@Model.MaKH">
                         </div>
@@ -57,6 +57,21 @@
                                     <input type="number" name="SoPhongDoi" id="w3lName" value="@Model.SoPhongDoi">
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-input col-md-4 mt-3">
+                            <label>Tình trạng</label>
+                            <select name="TinhTrang" class="selectpicker">
+                                @if (Model.TinhTrang == 0)
+                                {
+                                    <option value="0" selected="selected">Chưa xác nhận</option>
+                                    <option value="1">Đã xác nhận</option>
+                                }
+                                else
+                                {
+                                    <option value="0">Chưa xác nhận</option>
+                                    <option value="1"  selected="selected">Đã xác nhận</option>
+                                }
+                            </select>
                         </div>
                         <div class="form-input col-md-4 mt-3">
                             <label>Yêu Cầu Khác</label>

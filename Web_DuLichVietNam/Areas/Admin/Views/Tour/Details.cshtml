@@ -61,11 +61,11 @@
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Dịch vụ</label>
-                            <textarea rows="4" name="DichVu" value="@Model.DichVu" readonly>@Model.DichVu</textarea>
+                            <textarea rows="4" name="DichVu" id="txtDichVu" value="@Html.Raw(Model.DichVu)" readonly>@Html.Raw(Model.DichVu)</textarea>
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Hành trình</label>
-                            <textarea rows="4" name="HanhTrinh" value="@Model.HanhTrinh" readonly>@Model.HanhTrinh</textarea>
+                            <textarea rows="4" name="HanhTrinh" id="txtHanhTrinh" value="@Html.Raw(Model.HanhTrinh)" readonly>@Html.Raw(Model.HanhTrinh)</textarea>
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Nơi xuất phát</label>
@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="bottom-btn col-md-2 mt-3">
-                            <a class="btn btn-style btn-primary w-100" href="/Admin/Tour/Index">Quay Lại</a>
+                            <btn class="btn btn-style btn-primary w-100" onclick="window.location.href='/Admin/Tour/Index'">Quay Lại</btn>
                         </div>
                     </div>
                 </form>

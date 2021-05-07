@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-input col-md-4  mt-3">
                             <label>Ngày khởi hành</label>
-                            <input type="text" name="NgayKhoiHanh" value="@Model.NgayKhoiHanh.Value.ToString("dd/MM/yyyy")" readonly>
+                            <input type="text" name="NgayKhoiHanh" value="@Model.NgayKhoiHanh.ToString("dd/MM/yyyy")" readonly>
                         </div>
                         <div class="form-input col-md-2  mt-3">
                             <label>Số Ngày</label>
@@ -68,11 +68,11 @@
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Dịch vụ</label>
-                            <textarea rows="4" name="DichVu" value="@Model.DichVu" readonly>@Model.DichVu</textarea>
+                            <textarea rows="4" name="DichVu" value="@Model.DichVu" readonly>@Html.Raw(Model.DichVu)</textarea>
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Hành trình</label>
-                            <textarea rows="4" name="HanhTrinh" value="@Model.HanhTrinh" readonly>@Model.HanhTrinh</textarea>
+                            <textarea rows="4" name="HanhTrinh" value="@Model.HanhTrinh" readonly>@Html.Raw(Model.HanhTrinh)</textarea>
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Nơi xuất phát</label>

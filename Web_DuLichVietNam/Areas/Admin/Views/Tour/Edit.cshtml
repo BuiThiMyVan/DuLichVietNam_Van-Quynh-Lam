@@ -68,11 +68,11 @@
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Dịch vụ</label>
-                            <textarea row="4" name="DichVu" value="@Model.DichVu">@Model.DichVu</textarea>
+                            <textarea row="4" name="DichVu" id="txtDichVu" value="@Model.DichVu">@Html.Raw(Model.DichVu)</textarea>
                         </div>
                         <div class="form-input col-md-12  mt-3">
                             <label>Hành trình</label>
-                            <textarea rows="4" name="HanhTrinh" value="@Model.HanhTrinh">@Model.HanhTrinh</textarea>
+                            <textarea rows="4" name="HanhTrinh" id="txtHanhTrinh" value="@Model.HanhTrinh">@Html.Raw(Model.HanhTrinh)</textarea>
                         </div>
                         <div class="form-input col-md-3  mt-3">
                             <label>Nơi xuất phát</label>

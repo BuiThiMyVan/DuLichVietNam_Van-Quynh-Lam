@@ -110,7 +110,19 @@
                             <label>Giá Phòng Đôi</label>
                             <input type="text" name="GiaNL" value="@loaiphong.GiaPhongDoi.ToString("N0")" readonly>
                         </div>
-                        <div class="form-input col-md-12 mt-3">
+                        <div class="form-input col-md-3 mt-3">
+                            <label>Tình trạng</label>
+                            @if (Model.TinhTrang == 0)
+                            {
+                                <input type="text" name="TinhTrang" value="Chưa xác nhận" readonly>
+                            }
+                            else
+                            {
+                                <input type="text" name="TinhTrang" value="Đã xác nhận" readonly>
+                            }
+
+                        </div>
+                        <div class="form-input col-md-9 mt-3">
                             <label>Yêu Cầu Khác</label>
                             <textarea rows="4" name="YeuCau" value="@Model.YeuCau">@Model.YeuCau</textarea>
                         </div>

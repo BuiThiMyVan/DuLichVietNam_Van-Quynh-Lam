@@ -36,6 +36,8 @@ namespace Web_DuLichVietNam.EF
 
         public double? TongTien { get; set; }
 
+        public int? TinhTrang { get; set; }
+
         public virtual KHACHHANG KHACHHANG { get; set; }
 
         public virtual LOAIPHONG LOAIPHONG { get; set; }

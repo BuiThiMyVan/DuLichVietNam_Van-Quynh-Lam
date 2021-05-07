@@ -121,9 +121,6 @@
                         <span style="font-size: 24px;color:#006989"><span style="color:red; font-weight:bold; font-size: 35px" class="pr-0">@Model.TongTien.Value.ToString("N0")</span> VND</span>
                     </div>
                     <div class="bottom-btn col-md-4 mt-5">
-                        <button onclick="window.location.href='/DiemDen/Index'"class="btn btn-style btn-primary w-100">Tiếp tục Xem Tour</button>
-                    </div>
-                    <div class="bottom-btn col-md-4 mt-5">                       
                     </div>
                     <div class="bottom-btn col-md-4 mt-5">
                         <button class="btn btn-style btn-primary w-100" type="submit">Xác nhận Đặt Tour</button>
@@ -131,8 +128,15 @@
                 </div>
             </form>
         </div>
+        <div class="col-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 py-4 pt-4">
+            <div class="row">
+                <div class="bottom-btn col-md-3 mt-5">
+                    <button onclick="window.location.href='/DiemDen/Index'" class="btn btn-style btn-primary w-100">Tiếp tục Xem Tour</button>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
-</div>
 <script type="text/javascript">
     var listItems = document.getElementsByClassName("nav-item");
     for (let i = 0; i < listItems.length; i++) {

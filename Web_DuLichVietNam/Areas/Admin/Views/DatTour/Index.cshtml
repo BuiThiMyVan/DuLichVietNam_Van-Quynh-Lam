@@ -1,4 +1,5 @@
 ﻿@using Web_DuLichVietNam.EF;
+@using Web_DuLichVietNam.Models;
 @model PagedList.IPagedList<DATTOUR>
 @using PagedList.Mvc;
 
@@ -6,6 +7,7 @@
     ViewBag.Title = "Quản Lý Đặt Tour";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
 
 <main>
     <div class="container-fluid">
@@ -27,8 +29,8 @@
                             <tr>
                                 <th scope="col">Mã Tour</th>
                                 <th scope="col">Mã KH</th>
-                                <th scope="col">Người Lớn</th>
-                                <th scope="col">Trẻ Em</th>
+                                <th scope="col">Tên KH</th>
+                                <th scope="col">Số Điện Thoại</th>
                                 <th scope="col">Ngày Đặt</th>
                                 <th scope="col"></th>
 
@@ -40,8 +42,8 @@
                                 <tr>
                                     <td>@item.MaTour</td>
                                     <td>@item.MaKH</td>
-                                    <td>@item.SoLuongNL</td>
-                                    <td>@item.SoLuongTE</td>
+                                    <td>@item.KHACHHANG.TenKH</td>
+                                    <td>@item.KHACHHANG.SDT</td>
                                     <td>@item.NgayDat.Value.ToString("dd/MM/yyy")</td>
                                     <td><a href="/Admin/DatTour/Details/?matour=@item.MaTour&makh=@item.MaKH">Chi Tiết</a></td>
                                     <td class="text-center">

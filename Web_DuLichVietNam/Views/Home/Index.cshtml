@@ -241,64 +241,13 @@
             </div>
             <div class="booking-form-content mt-5">
                 <span class="sub-title">Nhanh tay đặt chỗ! </span>
-                <h3 class="hny-title">Đặt TOUR</h3>
-                <form action="search-results.html" method="post" class="booking-form">
-                    <div class="row book-form">
-                        <div class="form-input col-md-4 mt-3">
-                            <label>Ngày Khởi Hành</label>
-                            <input type="date" name="">
-                        </div>
-                        <div class="form-input col-md-4 mt-3">
-                            <label>Tên Tour</label>
-                            <select name="selectpicker" class="selectpicker">
-                                <option value="">Bất kỳ</option>
-                            </select>
-                        </div>
-                        <div class="form-input col-md-4 mt-3">
-                            <div class="row">
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Số Lượng</label>
-                                </div>
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Trẻ Em</label>
-                                    <input type="number" name="w3lName" id="w3lName">
-                                </div>
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Người Lớn</label>
-                                    <input type="number" name="w3lName" id="w3lName">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-input col-md-4  mt-3">
-                            <label>Loại Phòng</label>
-                            <select name="activity" class="selectpicker">
-                                <option value="">Bất kỳ</option>
-                            </select>
-                        </div>
-                        <div class="form-input col-md-4 mt-3">
-                            <div class="row">
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Số Phòng</label>
-                                </div>
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Đơn</label>
-                                    <input type="number" name="w3lName" id="w3lName">
-                                </div>
-                                <div class="form-input col-md-4 form-inline">
-                                    <label>Đôi</label>
-                                    <input type="number" name="w3lName" id="w3lName">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-input col-md-4 mt-3">
-                            <label>Yêu Cầu Khác</label>
-                            <input type="text" name="" placeholder="Yêu Cầu Khác" required="">
-                        </div>
-                        <div class="bottom-btn col-md-4 mt-3">
-                            <button class="btn btn-style btn-primary w-100">ĐĂNG KÝ</button>
-                        </div>
+                <h3 class="hny-title">Đặt TOUR</h3>  
+                <div class="row">
+                    <div class="col-md-4 mt-3">
+                        <button onclick="location.href='@Url.Action("Index", "DiemDen")'" class="btn btn-style btn-primary w-100">ĐẶT NGAY</button>
                     </div>
-                </form>
+                </div>
+            
             </div>
         </div>
     </div>

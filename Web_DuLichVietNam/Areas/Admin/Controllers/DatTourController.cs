@@ -42,6 +42,7 @@ namespace Web_DuLichVietNam.Areas.Admin.Controllers
             dattour.TongTien = model.TongTien;
             dattour.NgayDat = model.NgayDat;
             dattour.YeuCau = model.YeuCau;
+            dattour.TinhTrang = model.TinhTrang;
 
             return View(dattour);
         }
